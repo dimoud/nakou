@@ -194,7 +194,6 @@ function Nav({ lang, setLang, t }) {
       </div>
       <div className={`nav-drawer ${open ? "open" : ""}`}>
         {links.map(([id, label]) => <button key={id} onClick={() => go(id)}>{label}</button>)}
-        <a href="tel:6974731607">697 473 1607</a>
       </div>
     </nav>
   );
@@ -555,13 +554,10 @@ function usePauseOnTouch(trackRef) {
   }, []);
 }
 function ReviewsCarousel() {
-  const trackRef = useRef(null);
-  usePauseOnTouch(trackRef);
-  const doubled = [...LUX_REVIEWS, ...LUX_REVIEWS];
   return (
     <div className="rev-mobile-wrap">
-      <div className="rev-mobile-track" ref={trackRef}>
-        {doubled.map((r, i) => <ReviewCard key={i} r={r} />)}
+      <div className="rev-mobile-track">
+        {LUX_REVIEWS.map((r, i) => <ReviewCard key={i} r={r} />)}
       </div>
     </div>
   );
@@ -650,13 +646,10 @@ function NewsAndLinks({ t }) {
 
 /* ═══ Links mobile carousel ═══ */
 function LinksMobileCarousel({ items }) {
-  const trackRef = useRef(null);
-  usePauseOnTouch(trackRef);
-  const doubled = [...items, ...items];
   return (
     <div className="links-mobile-wrap">
-      <div className="links-mobile-track" ref={trackRef}>
-        {doubled.map((l, i) => (
+      <div className="links-mobile-track">
+        {items.map((l, i) => (
           <a key={i} className="link-pill" href={l.url} target="_blank" rel="noopener noreferrer">
             <span className="link-pill-title">{l.title}</span>
             <span className="link-pill-desc">{l.desc}</span>
@@ -795,7 +788,6 @@ function Contact({ t }) {
             <div className="form-card">
               <div className="form-card-head">
                 <h3 className="form-card-title">{c.formTitle}</h3>
-                <span className="form-card-note">{c.formNote}</span>
               </div>
               {status === "ok" && <div className="form-ok">{f.success}</div>}
               {status === "err" && <div className="form-ok" style={{borderColor:"#c0392b",color:"#e74c3c",background:"rgba(192,57,43,.08)"}}>Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε απευθείας.</div>}
