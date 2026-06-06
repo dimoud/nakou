@@ -773,15 +773,6 @@ function Contact({ t }) {
             <a href="https://www.facebook.com/profile.php?id=61579331237666" target="_blank" rel="noopener noreferrer" className="ci-social hoverable">
               <span className="ci-ic">f</span> Facebook
             </a>
-            <div className="contact-map">
-              <iframe
-                src="https://maps.google.com/maps?q=Μαυρομιχάλη+68,+Πολίχνη+Θεσσαλονίκης+565+33&output=embed&hl=el"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                title="Γεωργία Νάκου — Τοποθεσία"
-              ></iframe>
-            </div>
           </Reveal>
 
           <Reveal className="contact-form-wrap" delay={180}>
@@ -813,6 +804,15 @@ function Contact({ t }) {
             </a>
           </Reveal>
         </div>
+        <Reveal className="contact-map" delay={200}>
+          <iframe
+            src="https://maps.google.com/maps?q=Μαυρομιχάλη+68,+Πολίχνη+Θεσσαλονίκης+565+33&output=embed&hl=el"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            title="Γεωργία Νάκου — Τοποθεσία"
+          ></iframe>
+        </Reveal>
       </div>
     </section>
   );
