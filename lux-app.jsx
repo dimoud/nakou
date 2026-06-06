@@ -96,6 +96,21 @@ function Magnetic({ children, className, onClick, ...rest }) {
   return <button ref={ref} className={`magnetic ${className}`} onMouseMove={move} onMouseLeave={leave} onClick={onClick} {...rest}>{children}</button>;
 }
 
+const smoothScrollTo = (target) => {
+  const start = document.documentElement.scrollTop;
+  const dist = target - start;
+  const dur = 700;
+  let t0;
+  const ease = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+  const step = (ts) => {
+    if (!t0) t0 = ts;
+    const p = Math.min((ts - t0) / dur, 1);
+    document.documentElement.scrollTop = start + dist * ease(p);
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+
 /* ═══ Chrome: cursor + progress ═══ */
 function Cursor() {
   useEffect(() => {
@@ -124,10 +139,7 @@ function ScrollToTop() {
     window.addEventListener('scroll', on, { passive: true }); on();
     return () => window.removeEventListener('scroll', on);
   }, []);
-  const goTop = () => {
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  };
+  const goTop = () => smoothScrollTo(0);
   return (
     <button ref={btnRef} className="scroll-top" onClick={goTop} aria-label="Back to top">↑</button>
   );
@@ -146,10 +158,7 @@ function ScrollProgress() {
 const scrollTo = (id) => {
   const el = document.getElementById(id);
   if (!el) return;
-  let top = 0;
-  let node = el;
-  while (node) { top += node.offsetTop; node = node.offsetParent; }
-  window.scrollTo({ top: top - 70, behavior: "smooth" });
+  smoothScrollTo(el.getBoundingClientRect().top + document.documentElement.scrollTop - 70);
 };
 
 /* ═══ Scales emblem ═══ */
