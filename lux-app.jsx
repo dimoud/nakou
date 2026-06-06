@@ -141,7 +141,11 @@ function ScrollProgress() {
 
 const scrollTo = (id) => {
   const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 70, behavior: "smooth" });
+  if (!el) return;
+  let top = 0;
+  let node = el;
+  while (node) { top += node.offsetTop; node = node.offsetParent; }
+  window.scrollTo({ top: top - 70, behavior: "smooth" });
 };
 
 /* ═══ Scales emblem ═══ */
@@ -554,10 +558,31 @@ function usePauseOnTouch(trackRef) {
   }, []);
 }
 function ReviewsCarousel() {
+  const wrapRef = useRef(null);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    let isTouch = false;
+    const pause = () => { isTouch = true; el.style.setProperty('--rev-play', 'paused'); };
+    const resume = () => { isTouch = false; el.style.setProperty('--rev-play', 'running'); };
+    el.addEventListener('touchstart', pause, { passive: true });
+    el.addEventListener('touchend', resume);
+    el.addEventListener('mousedown', pause);
+    el.addEventListener('mouseup', resume);
+    el.addEventListener('mouseleave', resume);
+    return () => {
+      el.removeEventListener('touchstart', pause);
+      el.removeEventListener('touchend', resume);
+      el.removeEventListener('mousedown', pause);
+      el.removeEventListener('mouseup', resume);
+      el.removeEventListener('mouseleave', resume);
+    };
+  }, []);
+  const doubled = [...LUX_REVIEWS, ...LUX_REVIEWS];
   return (
-    <div className="rev-mobile-wrap">
+    <div className="rev-mobile-wrap" ref={wrapRef}>
       <div className="rev-mobile-track">
-        {LUX_REVIEWS.map((r, i) => <ReviewCard key={i} r={r} />)}
+        {doubled.map((r, i) => <ReviewCard key={i} r={r} />)}
       </div>
     </div>
   );
@@ -646,10 +671,30 @@ function NewsAndLinks({ t }) {
 
 /* ═══ Links mobile carousel ═══ */
 function LinksMobileCarousel({ items }) {
+  const wrapRef = useRef(null);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const pause = () => el.style.setProperty('--links-play', 'paused');
+    const resume = () => el.style.setProperty('--links-play', 'running');
+    el.addEventListener('touchstart', pause, { passive: true });
+    el.addEventListener('touchend', resume);
+    el.addEventListener('mousedown', pause);
+    el.addEventListener('mouseup', resume);
+    el.addEventListener('mouseleave', resume);
+    return () => {
+      el.removeEventListener('touchstart', pause);
+      el.removeEventListener('touchend', resume);
+      el.removeEventListener('mousedown', pause);
+      el.removeEventListener('mouseup', resume);
+      el.removeEventListener('mouseleave', resume);
+    };
+  }, []);
+  const doubled = [...items, ...items];
   return (
-    <div className="links-mobile-wrap">
+    <div className="links-mobile-wrap" ref={wrapRef}>
       <div className="links-mobile-track">
-        {items.map((l, i) => (
+        {doubled.map((l, i) => (
           <a key={i} className="link-pill" href={l.url} target="_blank" rel="noopener noreferrer">
             <span className="link-pill-title">{l.title}</span>
             <span className="link-pill-desc">{l.desc}</span>
