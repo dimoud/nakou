@@ -294,12 +294,34 @@ function Hero({ t }) {
           <Magnetic className="btn btn-ghost" onClick={() => scrollTo("services")}>{t.hero.ctaSecondary}</Magnetic>
         </div>
         <div className="hero-info">
-          <span className="hero-info-item">📍 {t.contact.address}</span>
-          <span className="hero-info-sep"></span>
-          <div className="hero-info-phones">
-            <a className="hero-info-item" href="tel:2317007792">📞 {t.contact.landline}</a>
-            <a className="hero-info-item" href="tel:6974731607">📱 {t.contact.phone}</a>
+          <a className="hic hic-1" href="tel:6974731607">
+            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></span>
+            <span className="hic-text">
+              <span className="hic-label">{t.contact.phoneLabel}</span>
+              <span className="hic-val">{t.contact.phone}</span>
+            </span>
+          </a>
+          <a className="hic hic-2" href="tel:2317007792">
+            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+            <span className="hic-text">
+              <span className="hic-label">{t.contact.landlineLabel}</span>
+              <span className="hic-val">{t.contact.landline}</span>
+            </span>
+          </a>
+          <div className="hic hic-3">
+            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span className="hic-text">
+              <span className="hic-label">{t.contact.addressLabel}</span>
+              <span className="hic-val">{t.contact.address}</span>
+            </span>
           </div>
+          <a className="hic hic-4" href={`mailto:${t.contact.email}`}>
+            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <span className="hic-text">
+              <span className="hic-label">{t.contact.emailLabel}</span>
+              <span className="hic-val">{t.contact.email}</span>
+            </span>
+          </a>
         </div>
       </div>
       <button className="scroll-cue fade-up d6" ref={cueRef} onClick={() => scrollTo("about")} aria-label="Scroll">
@@ -343,9 +365,6 @@ function About({ t }) {
                 <span>{item.replace(/\.$/, '')}</span>
               </div>
             ))}
-          </Reveal>
-          <Reveal className="chips" delay={240}>
-            {t.about.certs.map((c, i) => <span key={i} className="chip"><i></i>{c}</span>)}
           </Reveal>
         </div>
       </div>
@@ -406,19 +425,25 @@ function Services({ t }) {
 /* ═══ Manifesto (scroll-scrubbed word reveal) ═══ */
 function Manifesto({ t }) {
   const [ref, p] = useScrollScrub();
-  const words = t.manifesto;
-  // map scrub 0..1 onto the words, with a small lead-in/out
+  const rows = t.manifesto;
+  const words = rows.flat();
   const active = p * (words.length + 2) - 1;
+  let wi = 0;
   return (
     <section className="manifesto" ref={ref}>
       <div className="manifesto-glow" style={{ opacity: 0.25 + p * 0.55 }}></div>
       <p className="manifesto-text">
-        {words.map((w, i) => {
-          const lit = Math.max(0, Math.min(1, active - i + 1));
-          return (
-            <span key={i} className="mf-w" style={{ opacity: 0.12 + lit * 0.88, color: lit > 0.6 ? "var(--gold-lt)" : undefined, transform: `translateY(${(1 - lit) * 12}px)` }}>{w} </span>
-          );
-        })}
+        {rows.map((row, ri) => (
+          <span key={ri} className="mf-row">
+            {row.map((w) => {
+              const i = wi++;
+              const lit = Math.max(0, Math.min(1, active - i + 1));
+              return (
+                <span key={i} className="mf-w" style={{ opacity: 0.12 + lit * 0.88, color: lit > 0.6 ? "var(--gold-lt)" : undefined, transform: `translateY(${(1 - lit) * 12}px)` }}>{w} </span>
+              );
+            })}
+          </span>
+        ))}
       </p>
     </section>
   );
@@ -509,6 +534,38 @@ function ReviewRow({ items, reverse }) {
     </div>
   );
 }
+function usePauseOnTouch(trackRef) {
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const pause = () => { el.style.animationPlayState = 'paused'; };
+    const resume = () => { el.style.animationPlayState = 'running'; };
+    el.parentElement.addEventListener('touchstart', pause, { passive: true });
+    el.parentElement.addEventListener('touchend', resume);
+    el.parentElement.addEventListener('mousedown', pause);
+    el.parentElement.addEventListener('mouseup', resume);
+    el.parentElement.addEventListener('mouseleave', resume);
+    return () => {
+      el.parentElement.removeEventListener('touchstart', pause);
+      el.parentElement.removeEventListener('touchend', resume);
+      el.parentElement.removeEventListener('mousedown', pause);
+      el.parentElement.removeEventListener('mouseup', resume);
+      el.parentElement.removeEventListener('mouseleave', resume);
+    };
+  }, []);
+}
+function ReviewsCarousel() {
+  const trackRef = useRef(null);
+  usePauseOnTouch(trackRef);
+  const doubled = [...LUX_REVIEWS, ...LUX_REVIEWS];
+  return (
+    <div className="rev-mobile-wrap">
+      <div className="rev-mobile-track" ref={trackRef}>
+        {doubled.map((r, i) => <ReviewCard key={i} r={r} />)}
+      </div>
+    </div>
+  );
+}
 function Reviews({ t }) {
   const half = Math.ceil(LUX_REVIEWS.length / 2);
   return (
@@ -523,10 +580,11 @@ function Reviews({ t }) {
           <div><div className="g-stars">★★★★★ <b>{t.reviews.rating}</b></div><div className="g-sub">{t.reviews.subtitle}</div></div>
         </Reveal>
       </div>
-      <div className="rev-rows">
+      <div className="rev-rows rev-desktop">
         <ReviewRow items={LUX_REVIEWS.slice(0, half)} />
         <ReviewRow items={LUX_REVIEWS.slice(half)} reverse />
       </div>
+      <ReviewsCarousel />
     </section>
   );
 }
@@ -574,7 +632,7 @@ function NewsAndLinks({ t }) {
           <span className="nl-divider-label">{t.links.label}</span>
         </div>
       </div>
-      <div className="links-scroll-wrap">
+      <div className="links-scroll-wrap links-desktop">
         <div className="links-track">
           {tripled.map((l, i) => (
             <a key={i} className="link-pill" href={l.url} target="_blank" rel="noopener noreferrer">
@@ -585,7 +643,28 @@ function NewsAndLinks({ t }) {
           ))}
         </div>
       </div>
+      <LinksMobileCarousel items={t.links.list} />
     </section>
+  );
+}
+
+/* ═══ Links mobile carousel ═══ */
+function LinksMobileCarousel({ items }) {
+  const trackRef = useRef(null);
+  usePauseOnTouch(trackRef);
+  const doubled = [...items, ...items];
+  return (
+    <div className="links-mobile-wrap">
+      <div className="links-mobile-track" ref={trackRef}>
+        {doubled.map((l, i) => (
+          <a key={i} className="link-pill" href={l.url} target="_blank" rel="noopener noreferrer">
+            <span className="link-pill-title">{l.title}</span>
+            <span className="link-pill-desc">{l.desc}</span>
+            <span className="link-pill-arr">↗</span>
+          </a>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -599,7 +678,7 @@ function Links({ t }) {
         <Reveal tag="p" className="label gold">{t.links.label}</Reveal>
         <Reveal tag="h2" className="display on-dark mb" delay={80}>{t.links.heading}</Reveal>
       </div>
-      <div className="links-scroll-wrap">
+      <div className="links-scroll-wrap links-desktop">
         <div className="links-track">
           {tripled.map((l, i) => (
             <a key={i} className="link-pill" href={l.url} target="_blank" rel="noopener noreferrer">
@@ -610,6 +689,7 @@ function Links({ t }) {
           ))}
         </div>
       </div>
+      <LinksMobileCarousel items={items} />
     </section>
   );
 }
@@ -635,11 +715,28 @@ function Field({ name, type, value, onChange, label, textarea }) {
     </div>
   );
 }
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx6XHAAeJMIUVUBtHmjNqu6NGSKvFWgkWeUT4x6x_UMsmEaoPXFPMqlhXLKH5dJ0aGlag/exec";
+
 function Contact({ t }) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState(null); // null | "sending" | "ok" | "err"
   const ch = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const submit = (e) => { e.preventDefault(); setSent(true); setForm({ name: "", email: "", phone: "", message: "" }); setTimeout(() => setSent(false), 6000); };
+  const submit = (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    const fd = new FormData();
+    fd.append("_to", "gnakou.law@gmail.com");
+    fd.append("_key", "MyPrivateAgencyKey_99");
+    fd.append("_hp", "");
+    Object.entries(form).forEach(([k, v]) => fd.append(k, v));
+    fetch(SCRIPT_URL, { method: "POST", body: fd })
+      .then((r) => { if (!r.ok) throw new Error(); return r.json(); })
+      .then((j) => {
+        if (j && j.result === "success") { setStatus("ok"); setForm({ name: "", email: "", phone: "", message: "" }); }
+        else throw new Error();
+      })
+      .catch(() => setStatus("err"));
+  };
   const c = t.contact, f = c.form;
   const pRef = useParallax(0.05);
   return (
@@ -683,6 +780,15 @@ function Contact({ t }) {
             <a href="https://www.facebook.com/profile.php?id=61579331237666" target="_blank" rel="noopener noreferrer" className="ci-social hoverable">
               <span className="ci-ic">f</span> Facebook
             </a>
+            <div className="contact-map">
+              <iframe
+                src="https://maps.google.com/maps?q=Μαυρομιχάλη+68,+Πολίχνη+Θεσσαλονίκης+565+33&output=embed&hl=el"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                title="Γεωργία Νάκου — Τοποθεσία"
+              ></iframe>
+            </div>
           </Reveal>
 
           <Reveal className="contact-form-wrap" delay={180}>
@@ -691,7 +797,8 @@ function Contact({ t }) {
                 <h3 className="form-card-title">{c.formTitle}</h3>
                 <span className="form-card-note">{c.formNote}</span>
               </div>
-              {sent && <div className="form-ok">{f.success}</div>}
+              {status === "ok" && <div className="form-ok">{f.success}</div>}
+              {status === "err" && <div className="form-ok" style={{borderColor:"#c0392b",color:"#e74c3c",background:"rgba(192,57,43,.08)"}}>Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε απευθείας.</div>}
               <form onSubmit={submit}>
                 <Field name="name" value={form.name} onChange={ch} label={f.name} />
                 <div className="frow">
@@ -699,7 +806,9 @@ function Contact({ t }) {
                   <Field name="phone" type="tel" value={form.phone} onChange={ch} label={f.phone} />
                 </div>
                 <Field name="message" value={form.message} onChange={ch} label={f.message} textarea />
-                <Magnetic className="btn btn-gold full" onClick={() => {}}>{f.submit} <span className="arr">→</span></Magnetic>
+                <Magnetic className="btn btn-gold full" style={status === "sending" ? {opacity:.6,pointerEvents:"none"} : {}}>
+                  {status === "sending" ? "Αποστολή…" : f.submit} <span className="arr">→</span>
+                </Magnetic>
               </form>
             </div>
             <a href={c.calendlyUrl} target="_blank" rel="noopener noreferrer" className="ci-calendly hoverable" style={{marginTop:'16px'}}>
@@ -732,6 +841,30 @@ function Footer({ t, lang }) {
         <div className="footer-bottom">
           <span>{t.footer.rights}</span>
           <span>{t.contact.location}</span>
+        </div>
+      </div>
+      <hr className="ec-rule" />
+      <div className="expertease-credit">
+        <div className="ec-layer ec-layer--credit">
+          <span className="ec-copy">© {new Date().getFullYear()} · All Rights Reserved</span>
+          <span className="ec-divider"></span>
+          <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener noreferrer" className="ec-brand">
+            <span className="ec-label">Designed by</span>
+            <img src="logo_expertease.png" alt="Expertease Designs" className="ec-logo" />
+            <span className="ec-name">Expertease Designs</span>
+          </a>
+        </div>
+        <div className="ec-layer ec-layer--ad">
+          <div className="ec-ad-ring">
+            <div className="ec-ad-logo"><img src="logo_expertease.png" alt="Expertease Designs" /></div>
+          </div>
+          <div className="ec-ad-text">
+            <span className="ec-ad-question">Like this site?</span>
+            <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener noreferrer" className="ec-ad-cta">
+              Let's build yours
+              <span className="ec-ad-arrow"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><line x1="2" y1="6.5" x2="11" y2="6.5"/><polyline points="7,2.5 11,6.5 7,10.5"/></svg></span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

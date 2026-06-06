@@ -2,7 +2,7 @@ var LUX = {
   el: {
     nav: { about: "Προφίλ", services: "Υπηρεσίες", efka: "e-ΕΦΚΑ", reviews: "Κριτικές", contact: "Επικοινωνία" },
     hero: {
-      badge: "ΔΙΚΗΓΟΡΙΚΟ ΓΡΑΦΕΙΟ · ΑΘΗΝΑ · ΘΕΣΣΑΛΟΝΙΚΗ",
+      badge: "ΔΙΚΗΓΟΡΙΚΟ ΓΡΑΦΕΙΟ\n· ΑΘΗΝΑ · ΘΕΣΣΑΛΟΝΙΚΗ",
       name: "Γεωργία Νάκου",
       role: "ΔΙΚΗΓΟΡΟΣ",
       tagline: "Εμπιστοσύνη. Γνώση. Αποτέλεσμα.",
@@ -14,9 +14,9 @@ var LUX = {
       label: "Προφίλ",
       heading: "Πίσω από κάθε υπόθεση, ένας άνθρωπος.",
       bio: "Δικηγόρος του Δικηγορικού Συλλόγου Αθηνών. Πιστοποιημένη για συντάξεις e-ΕΦΚΑ. Σαφήνεια, συνέπεια, ανθρωπιά.",
-      certs: ["ΔΣ Αθηνών", "Πιστοποίηση e-ΕΦΚΑ", "Κτηματολόγιο & Ακίνητα", "Ασφαλιστικό Δίκαιο"]
+      certs: ["Πιστοποίηση e-ΕΦΚΑ", "Κτηματολόγιο & Ακίνητα", "Ασφαλιστικό Δίκαιο"]
     },
-    manifesto: ["Ο", "νόμος", "είναι", "περίπλοκος.", "Η", "σχέση", "μας", "όχι.", "Σαφήνεια", "σε", "κάθε", "βήμα."],
+    manifesto: [["Ο", "νόμος", "είναι", "περίπλοκος."], ["Η", "σχέση", "μας", "όχι."], ["Σαφήνεια", "σε", "κάθε", "βήμα."]],
     journey: {
       label: "Η Πορεία",
       heading: "Πώς δουλεύουμε μαζί",
@@ -127,7 +127,7 @@ var LUX = {
   en: {
     nav: { about: "Profile", services: "Services", efka: "e-EFKA", reviews: "Reviews", contact: "Contact" },
     hero: {
-      badge: "LAW OFFICE · ATHENS · THESSALONIKI",
+      badge: "LAW OFFICE\n· ATHENS · THESSALONIKI",
       name: "Georgia Nakou",
       role: "ATTORNEY AT LAW",
       tagline: "Trust. Knowledge. Results.",
@@ -139,9 +139,9 @@ var LUX = {
       label: "Profile",
       heading: "Behind every case, a person.",
       bio: "Attorney of the Athens Bar Association. Certified for e-EFKA pensions. Clarity, consistency, humanity.",
-      certs: ["Athens Bar", "e-EFKA Certified", "Land Registry & Real Estate", "Insurance Law"]
+      certs: ["e-EFKA Certified", "Land Registry & Real Estate", "Insurance Law"]
     },
-    manifesto: ["The", "law", "is", "complex.", "Our", "relationship", "is", "not.", "Clarity", "at", "every", "step."],
+    manifesto: [["The", "law", "is", "complex."], ["Our", "relationship", "is", "not."], ["Clarity", "at", "every", "step."]],
     journey: {
       label: "The Journey",
       heading: "How we work together",
