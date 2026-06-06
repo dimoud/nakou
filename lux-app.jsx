@@ -308,20 +308,20 @@ function Hero({ t }) {
               <span className="hic-val">{t.contact.landline}</span>
             </span>
           </a>
-          <div className="hic hic-3">
-            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span className="hic-text">
-              <span className="hic-label">{t.contact.addressLabel}</span>
-              <span className="hic-val">{t.contact.address}</span>
-            </span>
-          </div>
-          <a className="hic hic-4" href={`mailto:${t.contact.email}`}>
+          <a className="hic hic-3" href={`mailto:${t.contact.email}`}>
             <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
             <span className="hic-text">
               <span className="hic-label">{t.contact.emailLabel}</span>
               <span className="hic-val">{t.contact.email}</span>
             </span>
           </a>
+          <div className="hic hic-4">
+            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span className="hic-text">
+              <span className="hic-label">{t.contact.addressLabel}</span>
+              <span className="hic-val">{t.contact.address}</span>
+            </span>
+          </div>
         </div>
       </div>
       <button className="scroll-cue fade-up d6" ref={cueRef} onClick={() => scrollTo("about")} aria-label="Scroll">
@@ -840,7 +840,6 @@ function Footer({ t, lang }) {
         </div>
         <div className="footer-bottom">
           <span>{t.footer.rights}</span>
-          <span>{t.contact.location}</span>
         </div>
       </div>
       <hr className="ec-rule" />

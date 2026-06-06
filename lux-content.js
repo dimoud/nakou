@@ -118,7 +118,7 @@ var LUX = {
       citiesLabel: "Εξυπηρέτηση",
       landline: "231 700 7792",
       landlineLabel: "Σταθερό",
-      address: "Μαυρομιχάλη 68, Πολίχνη Θεσσαλονίκης 565 33",
+      address: "Μαυρομιχάλη 68, Πολίχνη",
       addressLabel: "Διεύθυνση",
       cities: [{ name: "Αθήνα", note: "Κατόπιν ραντεβού" }, { name: "Θεσσαλονίκη", note: "Κατόπιν ραντεβού" }]
     },
@@ -243,7 +243,7 @@ var LUX = {
       citiesLabel: "Where we serve",
       landline: "231 700 7792",
       landlineLabel: "Landline",
-      address: "Mavromichali 68, Polichni Thessaloniki 565 33",
+      address: "Mavromichali 68, Polichni",
       addressLabel: "Address",
       cities: [{ name: "Athens", note: "By appointment" }, { name: "Thessaloniki", note: "By appointment" }]
     },

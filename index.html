@@ -122,21 +122,21 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .hero-rule{width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:30px 0}
 .hero-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.6vw,30px);color:var(--cream);font-weight:300}
 .hero-cta-row{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;justify-content:center}
-.hero-info{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0;margin-top:36px;width:100%;max-width:760px}
-.hic{display:flex;align-items:center;gap:10px;padding:10px 22px;text-decoration:none;opacity:0;animation:hicFade .6s var(--ease) forwards;position:relative;transition:opacity .3s}
-.hic:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:22px;width:1px;background:rgba(201,163,94,.25)}
-.hic:hover{opacity:1}
+.hero-info{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:0;margin-top:40px;width:100%;max-width:760px;align-self:flex-start}
+.hic{display:flex;align-items:center;gap:16px;padding:12px 34px 12px 0;text-decoration:none;opacity:0;animation:hicSlideIn .65s var(--ease) forwards;position:relative;transition:opacity .25s}
+.hic:not(:last-child){padding-right:34px;margin-right:1px}
+.hic:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:32px;width:1px;background:rgba(201,163,94,.22)}
 .hic:hover .hic-val{color:var(--gold-lt)}
-.hic-1{animation-delay:1.4s}
-.hic-2{animation-delay:1.55s}
+.hic-1{animation-delay:1.3s}
+.hic-2{animation-delay:1.5s}
 .hic-3{animation-delay:1.7s}
-.hic-4{animation-delay:1.85s}
-@keyframes hicFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.hic-icon{width:14px;height:14px;flex-shrink:0;color:var(--gold);opacity:.85}
+.hic-4{animation-delay:1.9s}
+@keyframes hicSlideIn{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+.hic-icon{width:22px;height:22px;flex-shrink:0;color:var(--gold);opacity:.9}
 .hic-icon svg{width:100%;height:100%;display:block}
-.hic-text{display:flex;flex-direction:column;gap:1px}
-.hic-label{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;line-height:1}
-.hic-val{font-size:12px;color:var(--cream);font-weight:400;letter-spacing:.03em;line-height:1.3;transition:color .3s}
+.hic-text{display:flex;flex-direction:column;gap:3px}
+.hic-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;line-height:1}
+.hic-val{font-size:17px;color:var(--cream);font-weight:400;letter-spacing:.03em;line-height:1.3;transition:color .3s}
 .scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:24px;height:38px;border:1px solid var(--line);border-radius:14px;display:flex;justify-content:center;padding-top:7px;z-index:2}
 .scroll-cue span{width:3px;height:7px;background:var(--gold);border-radius:2px;animation:scrolldot 1.8s ease-in-out infinite}
 @keyframes scrolldot{0%{opacity:0;transform:translateY(-4px)}40%{opacity:1}80%,100%{opacity:0;transform:translateY(11px)}}
@@ -407,7 +407,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   .news-link{font-size:9px}
   .rev-desktop{display:none}
   .rev-mobile-wrap{display:block;overflow:hidden;padding:0 0 18px}
-  .rev-mobile-track{display:flex;gap:10px;width:max-content;animation:revMobile 35s linear infinite}
+  .rev-mobile-track{display:flex;gap:10px;width:max-content;animation:revMobile 280s linear infinite}
   @keyframes revMobile{to{transform:translateX(-50%)}}
   .rev-mobile-wrap .rev-card{width:58vw;flex-shrink:0;padding:14px 14px 12px;gap:7px;border-radius:8px}
   .rev-mobile-wrap .rev-stars{font-size:10px}
@@ -417,7 +417,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   .rev-mobile-wrap .rev-date{font-size:7px}
   .links-desktop{display:none}
   .links-mobile-wrap{display:block;overflow:hidden;padding:0 0 18px;margin-top:8px}
-  .links-mobile-track{display:flex;gap:10px;width:max-content;animation:linksMobile 30s linear infinite}
+  .links-mobile-track{display:flex;gap:10px;width:max-content;animation:linksMobile 240s linear infinite}
   @keyframes linksMobile{to{transform:translateX(-50%)}}
   .links-mobile-wrap .link-pill{width:52vw;flex-shrink:0;padding:14px 14px 12px;gap:5px}
   .links-mobile-wrap .link-pill-title{font-size:13px}
@@ -429,11 +429,11 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   .rev-card{width:280px}
   .reviews-head{flex-direction:column;align-items:flex-start}
   .ci-cities{grid-template-columns:1fr}
-  .hero-info{margin-top:22px}
-  .hic{padding:8px 14px;gap:7px}
-  .hic-icon{width:11px;height:11px}
+  .hero-info{margin-top:22px;justify-content:flex-start}
+  .hic{padding:8px 16px 8px 0;gap:9px}
+  .hic-icon{width:13px;height:13px}
   .hic-label{font-size:7px}
-  .hic-val{font-size:10px}
+  .hic-val{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
