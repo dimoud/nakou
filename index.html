@@ -98,7 +98,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .nav-drawer a{color:var(--gold);border:none}
 
 /* ═══ HERO ═══ */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px var(--px) 90px;position:relative;overflow:hidden;background:radial-gradient(140% 120% at 50% -10%,#2E1E0A 0%,#1A1208 35%,var(--bg) 65%)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px var(--px) 130px;position:relative;overflow:hidden;background:radial-gradient(140% 120% at 50% -10%,#2E1E0A 0%,#1A1208 35%,var(--bg) 65%)}
 .hero-particles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .hero-beam{position:absolute;top:0;left:-20%;width:60%;height:100%;background:linear-gradient(108deg,transparent 38%,rgba(201,163,94,.035) 46%,rgba(230,201,136,.07) 50%,rgba(201,163,94,.035) 54%,transparent 62%);pointer-events:none;z-index:1;animation:beamSweep 20s ease-in-out infinite}
 .hero-beam-2{animation-delay:10s;opacity:.6}
@@ -122,10 +122,10 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .hero-rule{width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:30px 0}
 .hero-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.6vw,30px);color:var(--cream);font-weight:300}
 .hero-cta-row{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;justify-content:center}
-.hero-info{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:0;margin-top:40px;width:100%;max-width:760px;align-self:flex-start}
-.hic{display:flex;align-items:center;gap:16px;padding:12px 34px 12px 0;text-decoration:none;opacity:0;animation:hicSlideIn .65s var(--ease) forwards;position:relative;transition:opacity .25s}
-.hic:not(:last-child){padding-right:34px;margin-right:1px}
-.hic:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:32px;width:1px;background:rgba(201,163,94,.22)}
+.hero-info{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;align-items:stretch;gap:0;border-top:1px solid rgba(201,163,94,.18);background:rgba(14,11,7,.45);backdrop-filter:blur(8px);z-index:2}
+.hic{display:flex;align-items:center;gap:16px;padding:20px 48px;text-decoration:none;opacity:0;animation:hicSlideIn .65s var(--ease) forwards;position:relative;transition:opacity .25s}
+.hic:not(:last-child){border-right:1px solid rgba(201,163,94,.18)}
+.hic:not(:last-child)::after{display:none}
 .hic:hover .hic-val{color:var(--gold-lt)}
 .hic-1{animation-delay:1.3s}
 .hic-2{animation-delay:1.5s}
@@ -386,6 +386,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 @media(max-width:860px){
   .nav-links{display:none}.nav-cta{display:none}.burger{display:flex}
   .hero-info{display:none}
+  .hero{padding-bottom:90px}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .about-portrait{max-width:360px}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:40px 24px}
@@ -435,11 +436,6 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   .rev-card{width:280px}
   .reviews-head{flex-direction:column;align-items:flex-start}
   .ci-cities{grid-template-columns:1fr}
-  .hero-info{margin-top:22px;justify-content:flex-start}
-  .hic{padding:8px 16px 8px 0;gap:9px}
-  .hic-icon{width:13px;height:13px}
-  .hic-label{font-size:7px}
-  .hic-val{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}

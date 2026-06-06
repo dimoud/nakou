@@ -292,40 +292,40 @@ function Hero({ t }) {
           <Magnetic className="btn btn-gold" onClick={() => scrollTo("contact")}>{t.hero.ctaPrimary}</Magnetic>
           <Magnetic className="btn btn-ghost" onClick={() => scrollTo("services")}>{t.hero.ctaSecondary}</Magnetic>
         </div>
-        <div className="hero-info">
-          <a className="hic hic-1" href="tel:6974731607">
-            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></span>
-            <span className="hic-text">
-              <span className="hic-label">{t.contact.phoneLabel}</span>
-              <span className="hic-val">{t.contact.phone}</span>
-            </span>
-          </a>
-          <a className="hic hic-2" href="tel:2317007792">
-            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-            <span className="hic-text">
-              <span className="hic-label">{t.contact.landlineLabel}</span>
-              <span className="hic-val">{t.contact.landline}</span>
-            </span>
-          </a>
-          <a className="hic hic-3" href={`mailto:${t.contact.email}`}>
-            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-            <span className="hic-text">
-              <span className="hic-label">{t.contact.emailLabel}</span>
-              <span className="hic-val">{t.contact.email}</span>
-            </span>
-          </a>
-          <div className="hic hic-4">
-            <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span className="hic-text">
-              <span className="hic-label">{t.contact.addressLabel}</span>
-              <span className="hic-val">{t.contact.address}</span>
-            </span>
-          </div>
-        </div>
       </div>
       <button className="scroll-cue fade-up d6" ref={cueRef} onClick={() => scrollTo("about")} aria-label="Scroll">
         <span></span>
       </button>
+      <div className="hero-info">
+        <a className="hic hic-1" href="tel:6974731607">
+          <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></span>
+          <span className="hic-text">
+            <span className="hic-label">{t.contact.phoneLabel}</span>
+            <span className="hic-val">{t.contact.phone}</span>
+          </span>
+        </a>
+        <a className="hic hic-2" href="tel:2317007792">
+          <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+          <span className="hic-text">
+            <span className="hic-label">{t.contact.landlineLabel}</span>
+            <span className="hic-val">{t.contact.landline}</span>
+          </span>
+        </a>
+        <a className="hic hic-3" href={`mailto:${t.contact.email}`}>
+          <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <span className="hic-text">
+            <span className="hic-label">{t.contact.emailLabel}</span>
+            <span className="hic-val">{t.contact.email}</span>
+          </span>
+        </a>
+        <div className="hic hic-4">
+          <span className="hic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span className="hic-text">
+            <span className="hic-label">{t.contact.addressLabel}</span>
+            <span className="hic-val">{t.contact.address}</span>
+          </span>
+        </div>
+      </div>
     </header>
   );
 }
