@@ -100,7 +100,7 @@ var LUX = {
     contact: {
       label: "Επικοινωνία",
       heading: "Ας μιλήσουμε",
-      sub: "Συμπληρώστε τη φόρμα ή καλέστε απευθείας. Η πρώτη συνομιλία είναι πάντα δωρεάν.",
+      sub: "Συμπληρώστε τη φόρμα ή καλέστε απευθείας.",
       formTitle: "Στείλτε μήνυμα",
       formNote: "Απάντηση εντός 24 ωρών.",
       calendlyLabel: "Κλείστε Ραντεβού Online",
@@ -225,7 +225,7 @@ var LUX = {
     contact: {
       label: "Contact",
       heading: "Let's talk",
-      sub: "Fill in the form or call directly. The first conversation is always free.",
+      sub: "Fill in the form or call directly.",
       formTitle: "Send a message",
       formNote: "Reply within 24 hours.",
       calendlyLabel: "Book an Appointment",

@@ -114,18 +114,22 @@ function Cursor() {
 }
 
 function ScrollToTop() {
-  const [show, setShow] = useState(false);
+  const btnRef = useRef(null);
   useEffect(() => {
-    const on = () => setShow(window.scrollY > 400);
+    const btn = btnRef.current;
+    const on = () => {
+      if (window.scrollY > 400) btn.classList.add('scroll-top-show');
+      else btn.classList.remove('scroll-top-show');
+    };
     window.addEventListener('scroll', on, { passive: true }); on();
     return () => window.removeEventListener('scroll', on);
   }, []);
+  const goTop = () => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
   return (
-    <button
-      className={`scroll-top ${show ? 'scroll-top-show' : ''}`}
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      aria-label="Back to top"
-    >↑</button>
+    <button ref={btnRef} className="scroll-top" onClick={goTop} aria-label="Back to top">↑</button>
   );
 }
 
