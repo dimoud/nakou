@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;1,300&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="hero-letters.css">
+    <link rel="stylesheet" href="zygaria.css">
     <link rel="stylesheet" href="expertease-credit.css">
 
     
@@ -246,7 +247,7 @@ window.__buildPage = function (lang, opts) {
         <div class="hero-beam" aria-hidden="true"></div>
         <div class="hero-beam hero-beam-2" aria-hidden="true"></div>
         <div class="hero-glow" aria-hidden="true"></div>
-        <div class="hero-emblem-bg" aria-hidden="true"><svg><use href="#emb"></use></svg></div>
+        <div class="hero-emblem-bg" aria-hidden="true"><div class="zygaria" data-zygaria="" data-zg-tilt="14"></div></div>
         <div class="hero-inner" id="heroInner">
             <p class="hero-badge" data-i18n="hero.badge">Δικηγορικό γραφείο
 Αθήνα · Θεσσαλονίκη</p>
@@ -289,6 +290,7 @@ window.__buildPage = function (lang, opts) {
     
     <section class="manifesto" id="manifesto" aria-labelledby="manifestoText">
         <div class="manifesto-glow" aria-hidden="true"></div>
+        <div class="manifesto-zygaria zygaria" data-zygaria="scroll" data-zg-target="#manifesto" data-zg-tilt="18" aria-hidden="true"></div>
         <p class="manifesto-text" id="manifestoText"><span class="mf-row" data-i18n="mf.1">Ο νόμος είναι περίπλοκος.</span> <span class="mf-row" data-i18n="mf.2">Η σχέση μας όχι.</span> <span class="mf-row" data-i18n="mf.3">Σαφήνεια σε κάθε βήμα.</span></p>
     </section>
 
@@ -371,7 +373,7 @@ window.__buildPage = function (lang, opts) {
                         <h3 class="form-card-title" data-i18n="form.title">Στείλτε μήνυμα</h3>
                         <form id="clientContactForm" novalidate="">
                             <input type="hidden" name="_to" value="gnakou.law@gmail.com">
-                            <input type="hidden" name="_key" value="CHANGE_AFTER_APPS_SCRIPT">
+                            <input type="hidden" name="_key" value="k_cXWASfZ8hcqzNoN4pJyfGMGE">
                             <input type="text" name="_hp" value="" autocomplete="off" tabindex="-1" aria-hidden="true" class="hp">
                             <div class="field">
                                 <label for="f-name" data-i18n="form.name">Ονοματεπώνυμο</label>
@@ -463,6 +465,7 @@ window.__buildPage = function (lang, opts) {
     <script src="i18n.js"></script>
     <script src="hero-letters.js"></script>
     <script src="animations.js"></script>
+    <script src="zygaria.js"></script>
     <script src="contact-form.js"></script>
     <script src="consent.js"></script>
 

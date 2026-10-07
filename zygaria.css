@@ -1,0 +1,22 @@
+/* zygaria.css — ζυγαριά που σχεδιάζεται και ισορροπεί (βλ. zygaria.js) */
+.zygaria{position:relative;aspect-ratio:400/430}
+.zygaria .zg-svg{width:100%;height:100%;display:block;overflow:visible}
+.zygaria .zg-gold{filter:drop-shadow(0 0 5px rgba(230,201,136,.35)) drop-shadow(0 10px 24px rgba(201,163,94,.18))}
+/* σχεδίασμα: οι γραμμές «γράφονται», μετά έρχονται γεμίσματα και λάμψη */
+.zygaria .zg-gold .zg-draw{transition:stroke-dashoffset 1.6s cubic-bezier(.65,0,.35,1)}
+.zygaria.zg-drawn .zg-gold .zg-draw{stroke-dashoffset:0!important}
+.zygaria .zg-fill{opacity:0;transition:opacity 1.2s ease 1.6s}
+.zygaria.zg-drawn .zg-gold .zg-fill{opacity:1}
+.zygaria .zg-shine{opacity:0;transition:opacity 1s ease 2s;mix-blend-mode:screen}
+.zygaria .zg-shine .zg-fill{display:none}
+.zygaria.zg-drawn .zg-shine{opacity:.75}
+/* ο άξονας λάμπει μία φορά όταν η ζυγαριά ισορροπήσει */
+.zygaria .zg-halo{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4)}
+.zygaria.zg-balanced .zg-halo{animation:zgHalo 2.4s ease-out 1 forwards}
+@keyframes zgHalo{0%{opacity:0;transform:scale(.4)}35%{opacity:.9;transform:scale(1)}100%{opacity:.25;transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){
+  .zygaria .zg-draw{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  .zygaria .zg-fill{opacity:1;transition:none}
+  .zygaria .zg-shine{display:none}
+  .zygaria.zg-balanced .zg-halo{animation:none;opacity:.25;transform:none}
+}

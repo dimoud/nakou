@@ -38,6 +38,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;1,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="hero-letters.css">
+    <link rel="stylesheet" href="zygaria.css">
     <link rel="stylesheet" href="expertease-credit.css">
 
     <!-- ΣΕΙΡΑ ΦΟΡΤΩΣΗΣ: πρώτα τα δεδομένα -->
@@ -92,7 +93,7 @@
         <div class="hero-beam" aria-hidden="true"></div>
         <div class="hero-beam hero-beam-2" aria-hidden="true"></div>
         <div class="hero-glow" aria-hidden="true"></div>
-        <div class="hero-emblem-bg" aria-hidden="true"><svg><use href="#emb"/></svg></div>
+        <div class="hero-emblem-bg" aria-hidden="true"><div class="zygaria" data-zygaria data-zg-tilt="14"></div></div>
         <div class="hero-inner" id="heroInner">
             <p class="hero-badge" data-i18n="hero.badge"></p>
             <img class="hero-emblem" src="nakou-monogram-200.webp" alt="" width="100" height="60" fetchpriority="high">
@@ -134,6 +135,7 @@
     <!-- ===== ΔΗΛΩΣΗ (λέξεις που φωτίζονται με την κύλιση) ===== -->
     <section class="manifesto" id="manifesto" aria-labelledby="manifestoText">
         <div class="manifesto-glow" aria-hidden="true"></div>
+        <div class="manifesto-zygaria zygaria" data-zygaria="scroll" data-zg-target="#manifesto" data-zg-tilt="18" aria-hidden="true"></div>
         <p class="manifesto-text" id="manifestoText"></p>
     </section>
 
@@ -216,7 +218,7 @@
                         <h3 class="form-card-title" data-i18n="form.title"></h3>
                         <form id="clientContactForm" novalidate>
                             <input type="hidden" name="_to"  value="gnakou.law@gmail.com">
-                            <input type="hidden" name="_key" value="CHANGE_AFTER_APPS_SCRIPT">
+                            <input type="hidden" name="_key" value="k_cXWASfZ8hcqzNoN4pJyfGMGE">
                             <input type="text" name="_hp" value="" autocomplete="off" tabindex="-1" aria-hidden="true" class="hp">
                             <div class="field">
                                 <label for="f-name" data-i18n="form.name"></label>
@@ -308,6 +310,7 @@
     <script src="i18n.js"></script>
     <script src="hero-letters.js"></script>
     <script src="animations.js"></script>
+    <script src="zygaria.js"></script>
     <script src="contact-form.js"></script>
     <script src="consent.js"></script>
 </body>
