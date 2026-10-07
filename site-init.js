@@ -295,6 +295,7 @@
         if ((el = $('footerPhone'))) { el.href = K.phoneTel; el.textContent = K.phone; }
         if ((el = $('footerEmail'))) { el.href = 'mailto:' + K.email; el.textContent = K.email; }
         if ((el = $('mcbCall'))) el.href = K.phoneTel;
+        if ((el = $('gBadge')) && K.googleProfile) el.href = K.googleProfile;
     }
 
     // ── 3. ΜΕΝΟΥ ΚΙΝΗΤΟΥ (σε ΚΑΘΕ σελίδα, και στην προαποδομένη) ──────────────

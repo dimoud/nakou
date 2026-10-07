@@ -52,7 +52,8 @@ window.SITE_CONFIG = {
     addressEl: 'Μαυρομιχάλη 68, Πολίχνη', addressEn: 'Mavromichali 68, Polichni',
     hoursEl: 'Δευτ – Παρ · 09:00 – 18:00', hoursEn: 'Mon – Fri · 09:00 – 18:00',
     facebook: 'https://www.facebook.com/profile.php?id=61579331237666',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=%CE%9C%CE%B1%CF%85%CF%81%CE%BF%CE%BC%CE%B9%CF%87%CE%AC%CE%BB%CE%B7+68+%CE%A0%CE%BF%CE%BB%CE%AF%CF%87%CE%BD%CE%B7+565+33',
+    mapsUrl: 'https://share.google/1sa4DvbyVMADLWPpc',          // το Προφίλ της στο Google (χάρτης, κριτικές)
+    googleProfile: 'https://share.google/1sa4DvbyVMADLWPpc',
     mapsEmbed: 'https://maps.google.com/maps?q=%CE%9C%CE%B1%CF%85%CF%81%CE%BF%CE%BC%CE%B9%CF%87%CE%AC%CE%BB%CE%B7+68,+%CE%A0%CE%BF%CE%BB%CE%AF%CF%87%CE%BD%CE%B7+%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7%CF%82+565+33&output=embed&hl=el',
   },
 

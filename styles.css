@@ -206,7 +206,9 @@ html:not(.js) .svc-detail{padding-bottom:28px}
 .reviews{background:var(--parch);color:var(--ink);overflow:hidden}
 .reviews-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,54px)}
 .reviews .label{color:var(--gold-ink)}.reviews .display{color:var(--ink)}
-.g-badge{display:flex;align-items:center;gap:14px}
+.g-badge{display:flex;align-items:center;gap:14px;min-height:48px;padding:6px 14px 6px 6px;border:1px solid transparent;border-radius:40px;transition:border-color .3s,background .3s}
+.g-badge:hover{border-color:var(--line-l);background:var(--ivory)}
+.g-stars,.g-sub{display:block}
 .g-logo{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line-l);color:#4285F4;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .g-stars{font-size:15px;color:#B07D16;letter-spacing:1px}.g-stars b{color:var(--ink);margin-left:6px}
 .g-sub{font-size:13px;color:var(--muted-d);margin-top:2px}
