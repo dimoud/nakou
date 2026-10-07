@@ -39,7 +39,7 @@ window.SITE_CONFIG = {
   },
 
   assets: {
-    logo: 'favicon.svg',
+    logo: 'nakou-monogram-200.webp',
     photo: 'georgia-nakou-960.webp',
     photoSmall: 'georgia-nakou-560.webp',
     heroSlides: [],
