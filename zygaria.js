@@ -115,7 +115,7 @@
            που οδηγούνται από τη γωνιακή επιτάχυνση της φάλαγγας. */
         var th = mode === 'scroll' ? -tilt0 : -tilt0, w = 0, target = 0;
         var pL = 0, vL = 0, pR = 0, vR = 0, push = 0;
-        var K = 16, C = 1.5, G = 26, CP = 2.2;
+        var K = 16, C = 2.0, G = 26, CP = 2.2;
         var released = mode === 'scroll', settledOnce = false, running = false, last = 0, raf = 0;
         place(th, 0, 0);
 
