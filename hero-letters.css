@@ -1,0 +1,33 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   hero-letters.css - όνομα γράμμα-γράμμα + μία λάμψη
+   Προέλευση: vaiosliapis.gr styles.css (.hero-anim, heroCh, heroShine, 10/2026).
+   Μεταβλητές: --hl-accent (χρώμα της γραμμής με λάμψη), --hl-glint (το φως).
+   ════════════════════════════════════════════════════════════════════════════ */
+:root { --hl-accent: var(--gold, #c9a86c); --hl-glint: #f6e3b4; }
+.hl .hl-line { display: block; }
+.hl-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+/* Ασφάλεια: κρυφό πριν το JS, εμφανίζεται μόνο του σε 2,5″ αν το JS δεν τρέξει */
+.hl-pre [data-letters] { opacity: 0; animation: hlFail .01s 2.5s forwards; }
+@keyframes hlFail { to { opacity: 1; } }
+
+/* Τα γράμματα ανεβαίνουν από «κάτω από τη γραμμή» */
+.hl-run .hl-line { overflow: hidden; padding-top: .12em; margin-top: -.12em; }
+.hl-run .hl-ch { display: inline-block; opacity: 0; transform: translateY(110%) rotate(6deg);
+                 animation: hlCh .9s cubic-bezier(.2,.8,.2,1) calc(.25s + var(--i) * var(--hl-step, 45ms)) forwards; }
+@keyframes hlCh { to { opacity: 1; transform: none; } }
+
+/* Μία λάμψη, ΜΙΑ φορά (όχι βρόχος: WCAG 2.2.2 και κούραση) */
+.hl-done .hl-shine {
+    color: var(--hl-accent);                                     /* εφεδρεία αν αποτύχει το clip */
+    background: linear-gradient(100deg, var(--hl-accent) 0%, var(--hl-accent) 42%, var(--hl-glint) 50%, var(--hl-accent) 58%, var(--hl-accent) 100%);
+    background-size: 260% 100%; background-position: 100% 0;
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: hlShine 2.4s ease-in-out .2s 1 forwards;
+}
+@keyframes hlShine { to { background-position: 0% 0; } }
+@media (forced-colors: active) { .hl-done .hl-shine { -webkit-text-fill-color: currentColor; background: none; } }
+@media (prefers-reduced-motion: reduce) {
+    .hl-pre [data-letters] { opacity: 1; animation: none; }
+    .hl-done .hl-shine { animation: none; background: none; -webkit-text-fill-color: currentColor; }
+}

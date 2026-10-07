@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-prerendered="en"><!-- ΠΑΡΑΓΩΓΟ ΑΡΧΕΙΟ — μην το διορθώνεις. Άλλαξε config.js / index.src.html και τρέξε prerender.py (2026-10-07) --><head>
+    <meta charset="UTF-8">
+    
+    
+    <script>document.documentElement.className+=' js';if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('hl-pre');</script>
+    
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',
+        ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgia Nakou · Lawyer — Athens · Thessaloniki</title>
+    <meta name="description" content="Law office of Georgia Nakou. Real estate, contracts, private agreements, e-EFKA pensions. Athens · Thessaloniki.">
+    <link rel="canonical" href="https://expertease.eu/nakou/en/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://expertease.eu/nakou/en/">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Georgia Nakou · Lawyer — Athens · Thessaloniki">
+    <meta property="og:description" content="Law office of Georgia Nakou. Real estate, contracts, private agreements, e-EFKA pensions. Athens · Thessaloniki.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Georgia Nakou · Lawyer — Athens · Thessaloniki">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#14100B">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;1,300&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../hero-letters.css">
+    <link rel="stylesheet" href="../expertease-credit.css">
+
+    
+    <script src="../config.js"></script>
+<script type="text/javascript">/**
+ * prerender-build.js — τρέχει ΜΕΣΑ στη σελίδα, μόνο από το prerender.py.
+ * Δεν ανεβαίνει στον ιστότοπο και δεν φορτώνεται ποτέ από επισκέπτη.
+ *
+ * Αφού τρέξουν site-init.js + i18n.js για τη γλώσσα `lang`, «παγώνει» το DOM
+ * σε στατικό HTML:
+ *   - <html lang data-prerendered>, καθαρισμός βοηθητικών κλάσεων
+ *   - title / description / canonical / hreflang / OG / Twitter ανά γλώσσα
+ *   - JSON-LD @graph από το config.entity (μία οντότητα, όχι διπλές)
+ *   - σχετικές διαδρομές σωστές και για την υποσελίδα en/
+ *   - οι διακόπτες γλώσσας γίνονται πραγματικοί σύνδεσμοι
+ * Επιστρέφει το πλήρες HTML ως συμβολοσειρά.
+ */
+window.__buildPage = function (lang, opts) {
+    'use strict';
+    var C = window.SITE_CONFIG, M = C.meta, E = C.entity || {}, P = C.profile;
+    var K = lang === 'en' ? 'En' : 'El';
+    var other = lang === 'el' ? 'en' : 'el';
+    var primary = M.lang || 'el';
+    var domain = String(M.domain || '').replace(/^https?:\/\//, '').replace(/\/+$/, '');
+    var base = 'https://' + domain + '/';
+    function urlFor(l) { return l === primary ? base : base + l + '/'; }
+    var depth = lang === primary ? '' : '../';
+    var today = opts.today;
+    var updated = M.updated || today;
+    var doc = document, head = doc.head, root = doc.documentElement;
+
+    function pick(o, k) { return o[k + K] || o[k + 'El'] || o[k] || ''; }
+    function strip(h) { var d = doc.createElement('div'); d.innerHTML = h || ''; return (d.textContent || '').replace(/\s+/g, ' ').trim(); }
+    function meta(sel, create, attr, val) {
+        var m = head.querySelector(sel);
+        if (!m) { m = doc.createElement(create.tag); Object.keys(create.attrs).forEach(function (a) { m.setAttribute(a, create.attrs[a]); }); head.appendChild(m); }
+        m.setAttribute(attr, val);
+        return m;
+    }
+
+    /* ── 1. ρίζα ─────────────────────────────────────────────────────────── */
+    root.lang = lang;
+    root.setAttribute('data-prerendered', lang);
+    root.classList.remove('js');
+    if (!root.className) root.removeAttribute('class');
+    head.querySelectorAll('[data-src-only]').forEach(function (n) { n.remove(); });
+
+    /* ── 2. κεφαλή ───────────────────────────────────────────────────────── */
+    var title = strip(M['title' + K] || M.titleEl), desc = strip(M['description' + K] || M.descriptionEl);
+    doc.title = title;
+    meta('meta[name="description"]', { tag: 'meta', attrs: { name: 'description' } }, 'content', desc);
+    meta('link[rel="canonical"]', { tag: 'link', attrs: { rel: 'canonical' } }, 'href', urlFor(lang));
+    head.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (n) { n.remove(); });
+    ['el', 'en', 'x-default'].forEach(function (h) {
+        var l = doc.createElement('link');
+        l.rel = 'alternate'; l.hreflang = h; l.href = urlFor(h === 'x-default' ? primary : h);
+        head.appendChild(l);
+    });
+    meta('meta[property="og:url"]',         { tag: 'meta', attrs: { property: 'og:url' } },         'content', urlFor(lang));
+    meta('meta[property="og:title"]',       { tag: 'meta', attrs: { property: 'og:title' } },       'content', title);
+    meta('meta[property="og:description"]', { tag: 'meta', attrs: { property: 'og:description' } }, 'content', desc);
+    meta('meta[property="og:locale"]',      { tag: 'meta', attrs: { property: 'og:locale' } },      'content', lang === 'en' ? 'en_GB' : 'el_GR');
+    meta('meta[property="og:locale:alternate"]', { tag: 'meta', attrs: { property: 'og:locale:alternate' } }, 'content', lang === 'en' ? 'el_GR' : 'en_GB');
+    meta('meta[property="og:site_name"]',   { tag: 'meta', attrs: { property: 'og:site_name' } },   'content', strip(pick(E, 'name')) || P['displayName' + K]);
+    meta('meta[name="twitter:title"]',       { tag: 'meta', attrs: { name: 'twitter:title' } },       'content', title);
+    meta('meta[name="twitter:description"]', { tag: 'meta', attrs: { name: 'twitter:description' } }, 'content', desc);
+    var hero = (C.assets.heroSlides || [])[0];
+    if (hero) {
+        meta('meta[property="og:image"]', { tag: 'meta', attrs: { property: 'og:image' } }, 'content', base + hero);
+        var pre = head.querySelector('link[rel="preload"][as="image"]');
+        if (pre) pre.setAttribute('href', hero);
+    }
+
+    /* ── 3. JSON-LD ──────────────────────────────────────────────────────── */
+    head.querySelectorAll('script[type="application/ld+json"]').forEach(function (n) { n.remove(); });
+    var bizId = base + '#business', personId = base + '#person', siteId = base + '#website';
+    var biz = {
+        '@type': E.type || 'LocalBusiness', '@id': bizId,
+        name: strip(pick(E, 'name')) || P['displayName' + K],
+        url: urlFor(lang),
+        telephone: (C.contact.phoneTel || '').replace(/^tel:/, ''),
+        email: C.contact.email,
+        image: hero ? base + hero : undefined,
+        logo: C.assets.logo ? base + C.assets.logo : undefined,
+        description: desc,
+        founder: { '@id': personId },
+        priceRange: E.priceRange || undefined,
+        hasMap: E.googleMaps || undefined,
+        sameAs: (E.sameAs || []).concat(E.googleMaps ? [E.googleMaps] : []).filter(Boolean),
+        openingHours: (E.openingHours || []).length ? E.openingHours : undefined,
+    };
+    if (E.streetEl || E.street) biz.address = { '@type': 'PostalAddress', streetAddress: pick(E, 'street'),
+        addressLocality: pick(E, 'locality'), postalCode: E.postalCode, addressRegion: pick(E, 'region'), addressCountry: E.country || 'GR' };
+    if (E.lat != null && E.lng != null) biz.geo = { '@type': 'GeoCoordinates', latitude: E.lat, longitude: E.lng };
+    if ((E.areaServed || []).length) biz.areaServed = E.areaServed.map(function (a) {
+        var o = { '@type': 'Place', name: a[lang] || a.el };
+        if (a.wikidata) o.sameAs = 'https://www.wikidata.org/wiki/' + a.wikidata;
+        return o;
+    });
+    if ((C.services || []).length) biz.hasOfferCatalog = { '@type': 'OfferCatalog', name: strip(lang === 'en' ? 'Services' : 'Υπηρεσίες'),
+        itemListElement: C.services.map(function (s) {
+            var su = s['url' + K] || s.urlEl || s.urlEn;   /* η σελίδα της υπηρεσίας, αν έχει */
+            return { '@type': 'Offer', itemOffered: { '@type': 'Service', name: strip(s['title' + K]), description: strip(s['text' + K]),
+                     url: su ? base + su.replace(/^\/+/, '') : undefined,
+                     provider: { '@id': bizId }, areaServed: biz.areaServed } };
+        }) };
+    var EP = E.person || {};
+    var person = { '@type': 'Person', '@id': personId, name: P['displayName' + K], jobTitle: strip(P['fullTitle' + K] || P['profession' + K]),
+        image: C.assets.photo ? base + C.assets.photo : undefined, worksFor: { '@id': bizId },
+        sameAs: (EP.sameAs || []).length ? EP.sameAs : undefined,
+        alumniOf: EP.alumniOf ? { '@type': 'CollegeOrUniversity', name: EP.alumniOf } : undefined,
+        memberOf: EP.memberOf ? { '@type': 'Organization', name: EP.memberOf } : undefined };
+    var creds = EP['credentials' + K] || EP.credentialsEl || [];
+    if (creds.length) person.hasCredential = creds.map(function (c) { return { '@type': 'EducationalOccupationalCredential', name: c }; });
+    var graph = [biz, person,
+        { '@type': 'WebSite', '@id': siteId, url: base, name: biz.name, inLanguage: ['el', 'en'], publisher: { '@id': bizId } },
+        { '@type': 'WebPage', '@id': urlFor(lang) + '#webpage', url: urlFor(lang), name: title, description: desc,
+          inLanguage: lang, isPartOf: { '@id': siteId }, about: { '@id': bizId }, dateModified: updated }];
+    var ld = doc.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, function (k, v) {
+        return (v === undefined || v === '' || (Array.isArray(v) && !v.length)) ? undefined : v;
+    }, 1);
+    head.appendChild(ld);
+
+    /* ── 4. διακόπτες γλώσσας = σύνδεσμοι ───────────────────────────────── */
+    doc.querySelectorAll('.lang-btn[data-lang]').forEach(function (a) {
+        var l = a.getAttribute('data-lang');
+        var target = l === primary ? (depth || './') : (lang === primary ? l + '/' : './');
+        if (a.tagName === 'A') a.setAttribute('href', target);
+        a.classList.toggle('active', l === lang);
+        a.setAttribute('aria-current', l === lang ? 'true' : 'false');
+    });
+
+    /* ── 5. σχετικές διαδρομές για την υποσελίδα ─────────────────────────── */
+    if (depth) {
+        var rel = /^(?![a-z][a-z0-9+.-]*:|\/|#|\.\.\/|data:|\.\/$)/i;
+        doc.querySelectorAll('[src],[href],[srcset],[poster]').forEach(function (el) {
+            if (el.classList && el.classList.contains('lang-btn')) return;
+            ['src', 'href', 'poster'].forEach(function (a) {
+                var v = el.getAttribute(a);
+                if (v && rel.test(v)) el.setAttribute(a, depth + v);
+            });
+            var ss = el.getAttribute('srcset');
+            if (ss) el.setAttribute('srcset', ss.split(',').map(function (p) {
+                p = p.trim(); return rel.test(p) ? depth + p : p; }).join(', '));
+        });
+        doc.querySelectorAll('[style*="url("]').forEach(function (el) {
+            el.setAttribute('style', el.getAttribute('style').replace(/url\((['"]?)(?![a-z]+:|\/|data:)([^'")]+)\1\)/gi,
+                function (m, q, u) { return 'url(' + q + depth + u + q + ')'; }));
+        });
+    }
+
+    /* ── 6. δεν αφήνουμε ίχνη εκτέλεσης ─────────────────────────────────── */
+    doc.querySelectorAll('#cc-banner').forEach(function (n) { n.remove(); });
+    doc.querySelectorAll('[data-fallback]').forEach(function (n) { n.removeAttribute('data-fallback'); });
+    /* σχόλια του αρχείου-πηγής: σε παράγωγο αρχείο παραπλανούν («άλλαξε εδώ…») */
+    var w = doc.createTreeWalker(root, NodeFilter.SHOW_COMMENT), cm = [];
+    while (w.nextNode()) cm.push(w.currentNode);
+    cm.forEach(function (c) { c.remove(); });
+    root.insertBefore(doc.createComment(' ΠΑΡΑΓΩΓΟ ΑΡΧΕΙΟ — μην το διορθώνεις. Άλλαξε config.js / index.src.html και τρέξε prerender.py (' + today + ') '), root.firstChild);
+
+    return '<!DOCTYPE html>\n' + root.outerHTML;
+};
+</script><link rel="alternate" hreflang="el" href="https://expertease.eu/nakou/"><link rel="alternate" hreflang="en" href="https://expertease.eu/nakou/en/"><link rel="alternate" hreflang="x-default" href="https://expertease.eu/nakou/"><meta property="og:locale:alternate" content="el_GR"><meta property="og:site_name" content="Georgia Nakou"><meta name="twitter:description" content="Law office of Georgia Nakou. Real estate, contracts, private agreements, e-EFKA pensions. Athens · Thessaloniki."></head>
+<body>
+
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+    <div class="scroll-progress" id="progress" aria-hidden="true"></div>
+
+    
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="emb" viewBox="0 0 100 104">
+            <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="50" cy="13" r="2.4"></circle><line x1="50" y1="16" x2="50" y2="86"></line><line x1="40" y1="90" x2="60" y2="90"></line>
+                <g class="emblem-beam"><path d="M27 27 Q50 19 73 27"></path><line x1="27" y1="27" x2="27" y2="34"></line><line x1="73" y1="27" x2="73" y2="34"></line>
+                <path d="M17 34 Q27 52 37 34"></path><path d="M63 34 Q73 52 83 34"></path></g>
+            </g>
+        </symbol>
+    </svg>
+
+    
+    <nav id="nav" class="nav">
+        <a href="#top" class="nav-brand">
+            <svg class="nav-emblem" aria-hidden="true"><use href="#emb"></use></svg>
+            <span class="nav-brand-name" data-i18n="brand.name">Georgia Nakou</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <button class="nav-close" type="button" aria-label="Close menu" data-i18n-aria-label="nav.close"><span aria-hidden="true">×</span></button>
+            <a href="#about" data-i18n="nav.about">Profile</a>
+            <a href="#services" data-i18n="nav.services">Services</a>
+            <a href="#efka" data-i18n="nav.efka">e-EFKA</a>
+            <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+            <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-right">
+            <div class="lang-toggle" id="langToggle">
+                <a class="lang-btn" data-lang="el" href="../" hreflang="el" lang="el" aria-label="Ελληνικά" aria-current="false">ΕΛ</a>
+                <span class="lang-sep" aria-hidden="true">/</span>
+                <a class="lang-btn active" data-lang="en" href="./" hreflang="en" lang="en" aria-label="English" aria-current="true">EN</a>
+            </div>
+            <button class="hamburger" id="hamburger" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Menu" data-i18n-aria-label="nav.menu"><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    
+    <header class="hero" id="top">
+        <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+        <div class="hero-beam" aria-hidden="true"></div>
+        <div class="hero-beam hero-beam-2" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-emblem-bg" aria-hidden="true"><svg><use href="#emb"></use></svg></div>
+        <div class="hero-inner" id="heroInner">
+            <p class="hero-badge" data-i18n="hero.badge">Law office
+Athens · Thessaloniki</p>
+            <svg class="hero-emblem" aria-hidden="true"><use href="#emb"></use></svg>
+            <h1 class="hero-name hl hl-run" data-letters="" data-step="42" style="--hl-step: 42ms;">
+                <span class="hl-line" data-i18n="hero.first" data-hl-text="Γεωργία">Georgia</span>
+                <span class="hl-line" data-i18n="hero.last" data-hl-text="Νάκου">Nakou</span>
+            </h1>
+            <p class="hero-role" data-i18n="hero.role">Attorney at Law</p>
+            <div class="hero-rule" aria-hidden="true"></div>
+            <p class="hero-tag" data-i18n="hero.tagline">Trust. Knowledge. Results.</p>
+            <div class="hero-cta-row">
+                <a class="btn btn-gold" href="#contact" data-i18n="hero.cta1">Get in touch</a>
+                <a class="btn btn-ghost" href="#services" data-i18n="hero.cta2">Services</a>
+            </div>
+        </div>
+        <div class="hero-info" id="heroInfo"><a class="hic" href="tel:+306974731607"><span class="hic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span><span class="hic-text"><span class="hic-label" data-i18n="contact.mobile">Mobile</span><span class="hic-val">697 473 1607</span></span></a><a class="hic" href="tel:+302317007792"><span class="hic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><span class="hic-text"><span class="hic-label" data-i18n="contact.landline">Landline</span><span class="hic-val">231 700 7792</span></span></a><a class="hic" href="mailto:gnakou.law@gmail.com"><span class="hic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg></span><span class="hic-text"><span class="hic-label" data-i18n="contact.emailLabel">Email</span><span class="hic-val">gnakou.law@gmail.com</span></span></a><a class="hic" href="https://www.google.com/maps/search/?api=1&amp;query=%CE%9C%CE%B1%CF%85%CF%81%CE%BF%CE%BC%CE%B9%CF%87%CE%AC%CE%BB%CE%B7+68+%CE%A0%CE%BF%CE%BB%CE%AF%CF%87%CE%BD%CE%B7+565+33" target="_blank" rel="noopener"><span class="hic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span><span class="hic-text"><span class="hic-label" data-i18n="contact.addressLabel">Office</span><span class="hic-val" data-i18n="contact.address">Mavromichali 68, Polichni</span></span></a></div>
+    </header>
+
+    
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marqueeTrack"><span class="marquee-item"><span data-i18n="marquee.m1">Real estate</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m2">Contracts</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m3">e-EFKA pensions</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m4">Private agreements</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m5">Inheritance</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m1">Real estate</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m2">Contracts</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m3">e-EFKA pensions</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m4">Private agreements</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m5">Inheritance</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m1">Real estate</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m2">Contracts</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m3">e-EFKA pensions</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m4">Private agreements</span><i class="marquee-dot">◆</i></span><span class="marquee-item"><span data-i18n="marquee.m5">Inheritance</span><i class="marquee-dot">◆</i></span></div></div>
+
+    
+    <section class="section about" id="about">
+        <div class="wrap about-grid">
+            <div class="about-portrait" data-reveal="">
+                <div class="portrait-frame">
+                    <img id="portrait" src="../georgia-nakou-960.webp" srcset="../georgia-nakou-560.webp 560w, ../georgia-nakou-960.webp 960w" sizes="(max-width: 860px) 324px, 486px" alt="Georgia Nakou, lawyer" data-i18n-alt="img.person" width="486" height="486" loading="lazy" decoding="async">
+                </div>
+                <p class="portrait-cap"><svg class="cap-emblem" aria-hidden="true"><use href="#emb"></use></svg><span data-i18n="about.cap">Georgia Nakou · Attorney at Law</span></p>
+            </div>
+            <div class="about-text">
+                <p class="label" data-reveal="" data-i18n="about.label">Profile</p>
+                <h2 class="display" data-reveal="" data-i18n="about.heading">Behind every case, a person.</h2>
+                <ul class="about-bio-list" id="aboutPoints" data-reveal=""><li class="about-bio-item"><span class="about-bio-bullet" aria-hidden="true"></span><span data-i18n="about.p1">Member of the Athens Bar Association</span></li><li class="about-bio-item"><span class="about-bio-bullet" aria-hidden="true"></span><span data-i18n="about.p2">Certified for e-EFKA pension cases</span></li><li class="about-bio-item"><span class="about-bio-bullet" aria-hidden="true"></span><span data-i18n="about.p3">Clarity, consistency, humanity</span></li></ul>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="manifesto" id="manifesto" aria-labelledby="manifestoText">
+        <div class="manifesto-glow" aria-hidden="true"></div>
+        <p class="manifesto-text" id="manifestoText"><span class="mf-row" data-i18n="mf.1">The law is complex.</span> <span class="mf-row" data-i18n="mf.2">Our relationship is not.</span> <span class="mf-row" data-i18n="mf.3">Clarity at every step.</span></p>
+    </section>
+
+    
+    <section class="section services" id="services">
+        <div class="wrap">
+            <p class="label" data-reveal="" data-i18n="services.label">Services</p>
+            <h2 class="display mb" data-reveal="" data-i18n="services.heading">Legal cover at every step</h2>
+            <div class="svc-list" id="servicesList"><div class="svc-item" data-reveal=""><h3 class="svc-h"><button class="svc-row" type="button" aria-expanded="false" aria-controls="svc1"><span class="svc-n" aria-hidden="true">01</span><span class="svc-title" data-i18n="s1.title">Property Purchases &amp; Sales</span><span class="svc-arrow" aria-hidden="true">+</span></button></h3><div class="svc-detail-wrap" id="svc1"><p class="svc-detail" data-i18n="s1.text">Full legal support when buying or selling property: title checks, registration with the Land Registry (Ktimatologio), preliminary and final contracts, and clearing liens and mortgages.</p></div></div><div class="svc-item" data-reveal=""><h3 class="svc-h"><button class="svc-row" type="button" aria-expanded="false" aria-controls="svc2"><span class="svc-n" aria-hidden="true">02</span><span class="svc-title" data-i18n="s2.title">Contracts</span><span class="svc-arrow" aria-hidden="true">+</span></button></h3><div class="svc-detail-wrap" id="svc2"><p class="svc-detail" data-i18n="s2.text">Drafting and legal review of sale, donation, parental gift and loan-for-use contracts, protecting your interests from the first draft to the signature.</p></div></div><div class="svc-item" data-reveal=""><h3 class="svc-h"><button class="svc-row" type="button" aria-expanded="false" aria-controls="svc3"><span class="svc-n" aria-hidden="true">03</span><span class="svc-title" data-i18n="s3.title">Private Agreements</span><span class="svc-arrow" aria-hidden="true">+</span></button></h3><div class="svc-detail-wrap" id="svc3"><p class="svc-detail" data-i18n="s3.text">Commercial agreements, residential and business leases, employment contracts. Written in clear terms, so you know what you are signing and what protects you.</p></div></div><div class="svc-item" data-reveal=""><h3 class="svc-h"><button class="svc-row" type="button" aria-expanded="false" aria-controls="svc4"><span class="svc-n" aria-hidden="true">04</span><span class="svc-title" data-i18n="s4.title">e-EFKA Pensions</span><span class="svc-arrow" aria-hidden="true">+</span></button></h3><div class="svc-detail-wrap" id="svc4"><p class="svc-detail" data-i18n="s4.text">Certified representation for main and supplementary pension applications with e-EFKA: insurance history review, recognition of insured periods and follow-through until the pension is awarded.</p></div></div></div>
+        </div>
+    </section>
+
+    
+    <section class="section journey" id="journey">
+        <div class="wrap journey-grid">
+            <div class="journey-aside">
+                <div class="journey-sticky">
+                    <p class="label" data-reveal="" data-i18n="journey.label">The process</p>
+                    <h2 class="display on-dark" data-reveal="" data-i18n="journey.heading">How we work together</h2>
+                    <p class="journey-intro" data-reveal="" data-i18n="journey.intro">Every case is a story. Step by step, with full transparency.</p>
+                    <div class="journey-counter" id="journeyCounter" aria-hidden="true"><div class="jc-num"><span class="jc-n on">01</span><span class="jc-n">02</span><span class="jc-n">03</span><span class="jc-n">04</span></div><div class="jc-bar"><span></span></div></div>
+                </div>
+            </div>
+            <ol class="journey-steps" id="journeySteps"><li class="journey-step on" data-i="0"><span class="js-n" aria-hidden="true">01</span><div class="js-body"><h3 class="js-title" data-i18n="j1.title">First contact</h3><p class="js-desc" data-i18n="j1.text">We listen and note down your case carefully, without rushing. The first conversation is free.</p></div></li><li class="journey-step" data-i="1"><span class="js-n" aria-hidden="true">02</span><div class="js-body"><h3 class="js-title" data-i18n="j2.title">Analysis &amp; strategy</h3><p class="js-desc" data-i18n="j2.text">We study documents, titles and entitlements, then plan a strategy with realistic expectations.</p></div></li><li class="journey-step" data-i="2"><span class="js-n" aria-hidden="true">03</span><div class="js-body"><h3 class="js-title" data-i18n="j3.title">Action</h3><p class="js-desc" data-i18n="j3.text">We draft, represent and see things through, on time at every deadline.</p></div></li><li class="journey-step" data-i="3"><span class="js-n" aria-hidden="true">04</span><div class="js-body"><h3 class="js-title" data-i18n="j4.title">Outcome</h3><p class="js-desc" data-i18n="j4.text">We close the case and stay by your side for whatever comes next.</p></div></li></ol>
+        </div>
+    </section>
+
+    
+    <section class="section efka" id="efka">
+        <div class="efka-glow" aria-hidden="true"></div>
+        <div class="wrap efka-inner">
+            <span class="efka-badge" data-reveal="" data-i18n="efka.badge">Certified</span>
+            <h2 class="efka-title" data-reveal="" data-i18n="efka.heading">Certified for e-EFKA</h2>
+            <p class="efka-desc" data-reveal="" data-i18n="efka.text">Representation for main and supplementary pensions, from the insurance history check to the award.</p>
+            <a class="btn btn-gold" id="efkaLink" href="https://www.e-efka.gov.gr/el/yperesies-e-ephka" target="_blank" rel="noopener" data-reveal=""><span data-i18n="efka.cta">Go to e-EFKA</span> <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+    </section>
+
+    
+    <section class="section reviews" id="reviews">
+        <div class="wrap reviews-head">
+            <div>
+                <p class="label" data-reveal="" data-i18n="reviews.label">Reviews</p>
+                <h2 class="display" data-reveal="" data-i18n="reviews.heading">The trust of our clients</h2>
+            </div>
+            <div class="g-badge" data-reveal="">
+                <span class="g-logo" aria-hidden="true">G</span>
+                <div><p class="g-stars"><span aria-hidden="true">★★★★★</span> <b>5.0</b></p><p class="g-sub" data-i18n="reviews.sub">Google reviews · translated from Greek</p></div>
+            </div>
+        </div>
+        <div class="rev-rows" id="reviewRows"><div class="rev-rowwrap"><ul class="rev-track "><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.1">Ms Nakou is first and foremost a decent HUMAN BEING, and then an excellent professional!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">O</span><span class="rev-name" translate="no">Olga Olgagr</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.2">She reminds you there are people behind the profession. From our first meeting I felt she was listening.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">S</span><span class="rev-name" translate="no">Sotiris Tseronis</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.3">Excellent both as a lawyer and as a person. Her knowledge and professionalism make you feel safe.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">P</span><span class="rev-name" translate="no">Psyrri Anthi</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.4">You rarely meet professionals who combine knowledge, reliability and humanity. Ms Nakou is one of them!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">D</span><span class="rev-name" translate="no">Dimitra P.</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.5">Very knowledgeable, kind and always available. My case was resolved quickly and with complete transparency.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">D</span><span class="rev-name" translate="no">Dionysis Lytras</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.6">A flawless professional, but above all a human being, with empathy and integrity. Every case becomes personal.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">G</span><span class="rev-name" translate="no">Georgia Xatzinikolaou</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.7">She cared sincerely from the very first moment and explained everything simply and clearly.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Π</span><span class="rev-name" lang="el" translate="no">Παναγιώτης Κωστόπουλος</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.8">Excellent as a lawyer and as a person. Always willing to help and answer every question.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">M</span><span class="rev-name" translate="no">mary azoykh</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.9">Beyond her excellent legal training, she stood out for her humanity and support.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">M</span><span class="rev-name" translate="no">Marios Zervos</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.10">Professional, reliable and effective! I recommend her without reservation — knowledge and integrity together.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Γ</span><span class="rev-name" lang="el" translate="no">Γιάννης Χατζημήτσος</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.11">A professional with knowledge and love for her work. The best lawyer and a wonderful person.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">F</span><span class="rev-name" translate="no">f0t</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.12">I was lucky to finally work with a real professional. Cheerful, patient and always available.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Φ</span><span class="rev-name" lang="el" translate="no">Φωτεινή Κωστοπούλου</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.13">I worked with her on a serious case and was completely satisfied. Professional, prompt and effective.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">K</span><span class="rev-name" translate="no">Kostas Kechagias</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.14">Excellent in her field. Thoroughly trained and always in touch about every development.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Γ</span><span class="rev-name" lang="el" translate="no">Γιώργος Φουρλάς</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.15">Punctual, willing to listen and to guide you with the right advice. Flawless.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">A</span><span class="rev-name" translate="no">Antriana Gkika</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.16">An excellent, well-trained lawyer, willing to answer every question. In short, a flawless professional.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">eleni al</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.17">A flawless lawyer! Top of her field, patient and understanding, always on the client’s side!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">D</span><span class="rev-name" translate="no">Dimitris Giagiwtis</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.18">I fully recommend Ms Nakou for her flawless professionalism and her expertise in complex legal matters.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Μ</span><span class="rev-name" lang="el" translate="no">Μαρία Μπινιάρη</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.1">Ms Nakou is first and foremost a decent HUMAN BEING, and then an excellent professional!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">O</span><span class="rev-name" translate="no">Olga Olgagr</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.2">She reminds you there are people behind the profession. From our first meeting I felt she was listening.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">S</span><span class="rev-name" translate="no">Sotiris Tseronis</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.3">Excellent both as a lawyer and as a person. Her knowledge and professionalism make you feel safe.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">P</span><span class="rev-name" translate="no">Psyrri Anthi</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.4">You rarely meet professionals who combine knowledge, reliability and humanity. Ms Nakou is one of them!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">D</span><span class="rev-name" translate="no">Dimitra P.</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.5">Very knowledgeable, kind and always available. My case was resolved quickly and with complete transparency.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">D</span><span class="rev-name" translate="no">Dionysis Lytras</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.6">A flawless professional, but above all a human being, with empathy and integrity. Every case becomes personal.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">G</span><span class="rev-name" translate="no">Georgia Xatzinikolaou</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.7">She cared sincerely from the very first moment and explained everything simply and clearly.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Π</span><span class="rev-name" lang="el" translate="no">Παναγιώτης Κωστόπουλος</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.8">Excellent as a lawyer and as a person. Always willing to help and answer every question.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">M</span><span class="rev-name" translate="no">mary azoykh</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.9">Beyond her excellent legal training, she stood out for her humanity and support.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">M</span><span class="rev-name" translate="no">Marios Zervos</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.10">Professional, reliable and effective! I recommend her without reservation — knowledge and integrity together.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Γ</span><span class="rev-name" lang="el" translate="no">Γιάννης Χατζημήτσος</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.11">A professional with knowledge and love for her work. The best lawyer and a wonderful person.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">F</span><span class="rev-name" translate="no">f0t</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.12">I was lucky to finally work with a real professional. Cheerful, patient and always available.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Φ</span><span class="rev-name" lang="el" translate="no">Φωτεινή Κωστοπούλου</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.13">I worked with her on a serious case and was completely satisfied. Professional, prompt and effective.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">K</span><span class="rev-name" translate="no">Kostas Kechagias</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.14">Excellent in her field. Thoroughly trained and always in touch about every development.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Γ</span><span class="rev-name" lang="el" translate="no">Γιώργος Φουρλάς</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.15">Punctual, willing to listen and to guide you with the right advice. Flawless.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">A</span><span class="rev-name" translate="no">Antriana Gkika</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.16">An excellent, well-trained lawyer, willing to answer every question. In short, a flawless professional.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">eleni al</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.17">A flawless lawyer! Top of her field, patient and understanding, always on the client’s side!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">D</span><span class="rev-name" translate="no">Dimitris Giagiwtis</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.18">I fully recommend Ms Nakou for her flawless professionalism and her expertise in complex legal matters.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Μ</span><span class="rev-name" lang="el" translate="no">Μαρία Μπινιάρη</span></p></li></ul></div><div class="rev-rowwrap"><ul class="rev-track rev"><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.19">An excellent professional with a human, direct approach.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Ν</span><span class="rev-name" lang="el" translate="no">Νίκος Αναστασόπουλος</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.20">She handled my case responsibly and honestly. She inspired trust from the very first moment!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">F</span><span class="rev-name" translate="no">Fofiko Fofikou</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.21">An excellent lawyer who explains things well. She handled our case right away. Thank you!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Μ</span><span class="rev-name" lang="el" translate="no">Μιλτιάδης Τσαλκιτζής</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.22">She answered every question and spared me any hassle. Fantastic service, thank you very much!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Θ</span><span class="rev-name" lang="el" translate="no">Θεοδώρα Κετάνη</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.23">Excellent service, very professional and knowledgeable, and above all humane.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">K</span><span class="rev-name" translate="no">kiki vag</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.24">An excellent lawyer! Flawless work, always punctual, responsible and quick to respond.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">A</span><span class="rev-name" translate="no">A-KAPA</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.25">An excellent professional and an empathetic person.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">Eleni Stonikou</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.26">Excellent, with an incredible breadth of legal knowledge.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">V</span><span class="rev-name" translate="no">Vasilis Michopoulos</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.27">She helped me responsibly, consistently and with real interest. She showed deep knowledge from the start.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">G</span><span class="rev-name" translate="no">Georgia Rentzou</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.28">She knows exactly how to steer you in the right direction. I would give 10 stars if I could!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">Evanggelia Danapasi</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.29">Luckily our neighbourhood has a lawyer like her!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">M</span><span class="rev-name" translate="no">Mpetso Mpetso</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.30">An excellent lawyer and an amazing person!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">F</span><span class="rev-name" translate="no">Fay Bet</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.31">Knowledgeable and ready to answer any question. I recommend her without reservation!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">B</span><span class="rev-name" translate="no">Bariemai Pouzw</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.32">An excellent, experienced professional!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">efstathia azouki</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.33">A flawless professional! By our side in everything! Thank you so much!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">eirini pavlidou</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.34">Prompt, flawless service! Highly recommended!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Δ</span><span class="rev-name" lang="el" translate="no">Δέσποινα Θεοφανίδου</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.35">An amazing professional! She stands out for her knowledge, which she explains with great patience.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Α</span><span class="rev-name" lang="el" translate="no">Αθηνά Κιοσέογλου</span></p></li><li class="rev-card"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.36">After a bad first experience with another lawyer, Ms Nakou took responsible charge of our property purchase.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Ν</span><span class="rev-name" lang="el" translate="no">Νικόλαος Αζ.</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.19">An excellent professional with a human, direct approach.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Ν</span><span class="rev-name" lang="el" translate="no">Νίκος Αναστασόπουλος</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.20">She handled my case responsibly and honestly. She inspired trust from the very first moment!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">F</span><span class="rev-name" translate="no">Fofiko Fofikou</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.21">An excellent lawyer who explains things well. She handled our case right away. Thank you!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Μ</span><span class="rev-name" lang="el" translate="no">Μιλτιάδης Τσαλκιτζής</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.22">She answered every question and spared me any hassle. Fantastic service, thank you very much!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Θ</span><span class="rev-name" lang="el" translate="no">Θεοδώρα Κετάνη</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.23">Excellent service, very professional and knowledgeable, and above all humane.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">K</span><span class="rev-name" translate="no">kiki vag</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.24">An excellent lawyer! Flawless work, always punctual, responsible and quick to respond.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">A</span><span class="rev-name" translate="no">A-KAPA</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.25">An excellent professional and an empathetic person.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">Eleni Stonikou</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.26">Excellent, with an incredible breadth of legal knowledge.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">V</span><span class="rev-name" translate="no">Vasilis Michopoulos</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.27">She helped me responsibly, consistently and with real interest. She showed deep knowledge from the start.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">G</span><span class="rev-name" translate="no">Georgia Rentzou</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.28">She knows exactly how to steer you in the right direction. I would give 10 stars if I could!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">Evanggelia Danapasi</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.29">Luckily our neighbourhood has a lawyer like her!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">M</span><span class="rev-name" translate="no">Mpetso Mpetso</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.30">An excellent lawyer and an amazing person!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">F</span><span class="rev-name" translate="no">Fay Bet</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.31">Knowledgeable and ready to answer any question. I recommend her without reservation!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">B</span><span class="rev-name" translate="no">Bariemai Pouzw</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.32">An excellent, experienced professional!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">efstathia azouki</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.33">A flawless professional! By our side in everything! Thank you so much!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">E</span><span class="rev-name" translate="no">eirini pavlidou</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.34">Prompt, flawless service! Highly recommended!</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Δ</span><span class="rev-name" lang="el" translate="no">Δέσποινα Θεοφανίδου</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.35">An amazing professional! She stands out for her knowledge, which she explains with great patience.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Α</span><span class="rev-name" lang="el" translate="no">Αθηνά Κιοσέογλου</span></p></li><li class="rev-card" aria-hidden="true"><p class="rev-stars" aria-hidden="true">★★★★★</p><blockquote class="rev-text">«<span data-i18n="rv.36">After a bad first experience with another lawyer, Ms Nakou took responsible charge of our property purchase.</span>»</blockquote><p class="rev-foot"><span class="rev-av" aria-hidden="true">Ν</span><span class="rev-name" lang="el" translate="no">Νικόλαος Αζ.</span></p></li></ul></div></div>
+    </section>
+
+    
+    <section class="section news-links" id="news">
+        <div class="wrap">
+            <p class="label" data-reveal="" data-i18n="news.label">News</p>
+            <h2 class="display" data-reveal="" data-i18n="news.heading">Legal updates</h2>
+            <div class="nl-news-grid" id="newsGrid"><article class="news-card" data-reveal=""><span class="news-tag" data-i18n="n1.cat">Law 5239/2025</span><h3 class="news-title" data-i18n="n1.title">New rules for former OGA insurance</h3><p class="news-desc" data-i18n="n1.text">Additional insurance time with the former OGA can now count even without continued main insurance from 1/1/1998.</p><a class="news-link" href="https://www.facebook.com/share/p/1SgFEzHLVQ/?mibextid=wwXIfr" target="_blank" rel="noopener"><span data-i18n="news.more">Read</span> <span aria-hidden="true">→</span></a></article><article class="news-card" data-reveal=""><span class="news-tag" data-i18n="n2.cat">Ruling</span><h3 class="news-title" data-i18n="n2.title">Debts of heirs written off</h3><p class="news-desc" data-i18n="n2.text">Debts assessed on heirs who were first cousins of a deceased debtor were written off.</p><a class="news-link" href="https://www.facebook.com/share/1CLy9GMSBD/?mibextid=wwXIfr" target="_blank" rel="noopener"><span data-i18n="news.more">Read</span> <span aria-hidden="true">→</span></a></article></div>
+            <div class="nl-divider"><span class="nl-divider-label" data-i18n="links.label">Useful links</span></div>
+        </div>
+        <div class="links-scroll-wrap" id="linksWrap"><ul class="links-track" id="linksTrack"><li><a class="link-pill" href="https://www.gov.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l1.title">gov.gr</span><span class="link-pill-desc" data-i18n="l1.desc">Government portal</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.efka.gov.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l2.title">e-EFKA</span><span class="link-pill-desc" data-i18n="l2.desc">Online services</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.ktimatologio.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l3.title">Land Registry</span><span class="link-pill-desc" data-i18n="l3.desc">Hellenic Cadastre</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.aade.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l4.title">myAADE</span><span class="link-pill-desc" data-i18n="l4.desc">Independent Authority for Public Revenue</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.dsa.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l5.title">Athens Bar</span><span class="link-pill-desc" data-i18n="l5.desc">Athens Bar Association</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.olomeleia.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l6.title">Olomeleia</span><span class="link-pill-desc" data-i18n="l6.desc">Greek Bar Associations</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.areiospagos.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l7.title">Areios Pagos</span><span class="link-pill-desc" data-i18n="l7.desc">Supreme Civil Court</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.ste.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l8.title">Council of State</span><span class="link-pill-desc" data-i18n="l8.desc">Supreme Administrative Court</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.et.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l9.title">National Printing Office</span><span class="link-pill-desc" data-i18n="l9.desc">Government Gazette</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://mitos.gov.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l10.title">Mitos</span><span class="link-pill-desc" data-i18n="l10.desc">Administrative procedures</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://eur-lex.europa.eu" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l11.title">EUR-Lex</span><span class="link-pill-desc" data-i18n="l11.desc">EU law</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.businessportal.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l12.title">GEMI</span><span class="link-pill-desc" data-i18n="l12.desc">General Commercial Registry</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.synigoros.gr" target="_blank" rel="noopener"><span class="link-pill-title" data-i18n="l13.title">Ombudsman</span><span class="link-pill-desc" data-i18n="l13.desc">Independent authority</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.gov.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l1.title">gov.gr</span><span class="link-pill-desc" data-i18n="l1.desc">Government portal</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.efka.gov.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l2.title">e-EFKA</span><span class="link-pill-desc" data-i18n="l2.desc">Online services</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.ktimatologio.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l3.title">Land Registry</span><span class="link-pill-desc" data-i18n="l3.desc">Hellenic Cadastre</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.aade.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l4.title">myAADE</span><span class="link-pill-desc" data-i18n="l4.desc">Independent Authority for Public Revenue</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.dsa.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l5.title">Athens Bar</span><span class="link-pill-desc" data-i18n="l5.desc">Athens Bar Association</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.olomeleia.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l6.title">Olomeleia</span><span class="link-pill-desc" data-i18n="l6.desc">Greek Bar Associations</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.areiospagos.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l7.title">Areios Pagos</span><span class="link-pill-desc" data-i18n="l7.desc">Supreme Civil Court</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.ste.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l8.title">Council of State</span><span class="link-pill-desc" data-i18n="l8.desc">Supreme Administrative Court</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.et.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l9.title">National Printing Office</span><span class="link-pill-desc" data-i18n="l9.desc">Government Gazette</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://mitos.gov.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l10.title">Mitos</span><span class="link-pill-desc" data-i18n="l10.desc">Administrative procedures</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://eur-lex.europa.eu" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l11.title">EUR-Lex</span><span class="link-pill-desc" data-i18n="l11.desc">EU law</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.businessportal.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l12.title">GEMI</span><span class="link-pill-desc" data-i18n="l12.desc">General Commercial Registry</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li><li><a class="link-pill" href="https://www.synigoros.gr" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="link-pill-title" data-i18n="l13.title">Ombudsman</span><span class="link-pill-desc" data-i18n="l13.desc">Independent authority</span><span class="link-pill-arr" aria-hidden="true">↗</span></a></li></ul></div>
+    </section>
+
+    
+    <section class="section contact" id="contact">
+        <div class="contact-bg" aria-hidden="true"></div>
+        <div class="contact-emblem-bg" aria-hidden="true"><svg><use href="#emb"></use></svg></div>
+        <div class="wrap">
+            <div class="contact-head">
+                <p class="label" data-reveal="" data-i18n="contact.label">Contact</p>
+                <h2 class="display on-dark" data-reveal="" data-i18n="contact.heading">Let’s talk</h2>
+                <p class="contact-sub" data-reveal="" data-i18n="contact.sub">Call directly or send a message. The first conversation is free.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" id="contactInfo" data-reveal=""><div class="ci-block"><p class="ci-cap" data-i18n="contact.direct">Direct contact</p><a class="ci" href="tel:+306974731607"><span class="ci-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span><span class="ci-txt"><b data-i18n="contact.mobile">Mobile</b><span>697 473 1607</span></span><span class="ci-go" aria-hidden="true">↗</span></a><a class="ci" href="tel:+302317007792"><span class="ci-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><span class="ci-txt"><b data-i18n="contact.landline">Landline</b><span>231 700 7792</span></span><span class="ci-go" aria-hidden="true">↗</span></a><a class="ci" href="mailto:gnakou.law@gmail.com"><span class="ci-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg></span><span class="ci-txt"><b data-i18n="contact.emailLabel">Email</b><span>gnakou.law@gmail.com</span></span><span class="ci-go" aria-hidden="true">↗</span></a><a class="ci" href="https://www.google.com/maps/search/?api=1&amp;query=%CE%9C%CE%B1%CF%85%CF%81%CE%BF%CE%BC%CE%B9%CF%87%CE%AC%CE%BB%CE%B7+68+%CE%A0%CE%BF%CE%BB%CE%AF%CF%87%CE%BD%CE%B7+565+33" target="_blank" rel="noopener"><span class="ci-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span><span class="ci-txt"><b data-i18n="contact.addressLabel">Office</b><span data-i18n="contact.address">Mavromichali 68, Polichni</span></span><span class="ci-go" aria-hidden="true">↗</span></a><div class="ci"><span class="ci-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg></span><span class="ci-txt"><b data-i18n="contact.hoursLabel">Hours</b><span data-i18n="contact.hours">Mon – Fri · 09:00 – 18:00</span></span></div></div><div class="ci-block"><p class="ci-cap" data-i18n="contact.cities">Where we work</p><div class="ci-cities"><div class="ci-city"><span class="ci-city-dot" aria-hidden="true"></span><div><p class="ci-city-name" data-i18n="city.ath">Athens</p><p class="ci-city-note" data-i18n="contact.byAppt">By appointment</p></div></div><div class="ci-city"><span class="ci-city-dot" aria-hidden="true"></span><div><p class="ci-city-name" data-i18n="city.thes">Thessaloniki</p><p class="ci-city-note" data-i18n="contact.byAppt">By appointment</p></div></div></div></div><a class="ci-social" href="https://www.facebook.com/profile.php?id=61579331237666" target="_blank" rel="noopener"><span class="ci-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6c0-.9.6-1.1 1-1.1h2.5V1H14c-3.6 0-4.4 2.7-4.4 4.4V8H7v4h2.6v11H14V12h3.2l.4-4H14z"></path></svg></span> Facebook</a></div>
+
+                <div class="contact-form-wrap" data-reveal="">
+                    <div class="form-card">
+                        <h3 class="form-card-title" data-i18n="form.title">Send a message</h3>
+                        <form id="clientContactForm" novalidate="">
+                            <input type="hidden" name="_to" value="gnakou.law@gmail.com">
+                            <input type="hidden" name="_key" value="CHANGE_AFTER_APPS_SCRIPT">
+                            <input type="text" name="_hp" value="" autocomplete="off" tabindex="-1" aria-hidden="true" class="hp">
+                            <div class="field">
+                                <label for="f-name" data-i18n="form.name">Full name</label>
+                                <input id="f-name" name="name" type="text" autocomplete="name" required="">
+                            </div>
+                            <div class="frow">
+                                <div class="field">
+                                    <label for="f-email" data-i18n="form.email">Email</label>
+                                    <input id="f-email" name="email" type="email" autocomplete="email" required="">
+                                </div>
+                                <div class="field">
+                                    <label for="f-phone" data-i18n="form.phone">Phone (optional)</label>
+                                    <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="f-message" data-i18n="form.message">A few words about your case</label>
+                                <textarea id="f-message" name="message" rows="4" required="" minlength="10"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold full" data-i18n="form.submit">Send</button>
+                            <p id="formStatus" role="status" aria-live="polite"></p>
+                            <p class="form-note" data-i18n="form.note">We usually reply within one working day.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map" id="contactMap" data-reveal="">
+                <button type="button" class="map-load" id="mapLoad">
+                    <svg class="map-emb" aria-hidden="true"><use href="#emb"></use></svg>
+                    <span class="map-addr" data-i18n="contact.address">Mavromichali 68, Polichni</span>
+                    <span class="btn btn-ghost" data-i18n="map.show">Show map</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <svg class="footer-emblem" aria-hidden="true"><use href="#emb"></use></svg>
+                    <div><p class="footer-name" data-i18n="brand.name">Georgia Nakou</p><p class="footer-role" data-i18n="hero.role">Attorney at Law</p></div>
+                </div>
+                <p class="footer-tag" data-i18n="footer.tagline">Legal expertise. A human approach.</p>
+            </div>
+            <div class="footer-bottom">
+                <a href="tel:+306974731607" class="footer-link" id="footerPhone">697 473 1607</a>
+                <a href="mailto:gnakou.law@gmail.com" class="footer-link" id="footerEmail">gnakou.law@gmail.com</a>
+                <button type="button" class="cc-settings-link" data-cc-open="" data-i18n="cc.settings">Cookie settings</button>
+            </div>
+        </div>
+
+        <hr class="ec-rule">
+        <div class="expertease-credit">
+          <div class="ec-layer ec-layer--credit">
+            <span class="ec-copy">© <span id="ecYear">2026</span> · <span data-i18n="ec.rights">All rights reserved</span></span>
+            <span class="ec-divider"></span>
+            <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener" class="ec-brand">
+              <span class="ec-label" data-i18n="ec.by">Designed by</span>
+              <img src="../logo_expertease.webp" alt="" class="ec-logo" width="20" height="20" loading="lazy">
+              <span class="ec-name">Expertease Designs</span>
+            </a>
+          </div>
+          <div class="ec-layer ec-layer--ad">
+            <div class="ec-ad-ring"><div class="ec-ad-logo"><img src="../logo_expertease.webp" alt="" width="16" height="16" loading="lazy"></div></div>
+            <div class="ec-ad-text">
+              <span class="ec-ad-question" data-i18n="ec.like">Like this site?</span>
+              <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener" class="ec-ad-cta">
+                <span data-i18n="ec.cta">Let’s build yours</span>
+                <span class="ec-ad-arrow"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="6.5" x2="11" y2="6.5"></line><polyline points="7,2.5 11,6.5 7,10.5"></polyline></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+    
+    <div class="mcb" id="mobileCallBar">
+        <a class="mcb-call" id="mcbCall" href="tel:+306974731607"><span aria-hidden="true">☎</span> <span data-i18n="mcb.call">Call</span></a>
+        <a class="mcb-msg" href="#contact"><span aria-hidden="true">✉</span> <span data-i18n="mcb.msg">Message</span></a>
+    </div>
+    <button type="button" class="scroll-top" id="backToTop" aria-label="Back to top" data-i18n-aria-label="a11y.top">↑</button>
+
+    
+    <script src="../site-init.js"></script>
+    <script src="../i18n.js"></script>
+    <script src="../hero-letters.js"></script>
+    <script src="../animations.js"></script>
+    <script src="../contact-form.js"></script>
+    <script src="../consent.js"></script>
+
+
+</body></html>

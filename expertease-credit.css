@@ -261,10 +261,19 @@ hr.ec-rule {
 }
 
 /* ── responsive ── */
-@media (max-width: 480px) {
-  .expertease-credit { height: auto; padding: 12px 5%; }
-  .ec-layer          { position: relative; inset: auto; padding: 0; }
+@media (max-width: 640px) {
+  .expertease-credit {
+    height: auto;
+    padding: 18px 5% 22px;
+    margin-bottom: 0 !important;  /* page ends here — no white space below */
+  }
+  .ec-layer          { position: relative; inset: auto; padding: 0; flex-direction: column; gap: 6px; }
   .ec-layer--ad      { display: none; }
   .ec-layer--credit  { animation: none; opacity: 1; transform: none; }
   .ec-divider        { display: none; }
+  /* Bigger credits on mobile */
+  .ec-copy  { font-size: 13px; letter-spacing: 1px; }
+  .ec-label { font-size: 12px; letter-spacing: 0.8px; }
+  .ec-name  { font-size: 14px; letter-spacing: 1px; }
+  .ec-logo  { height: 22px; }
 }
