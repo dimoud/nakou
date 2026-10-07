@@ -11,7 +11,7 @@
  *     γλώσσα της στιγμής (όχι της φόρτωσης), συμβάν GA4 generate_lead.
  * ────────────────────────────────────────────────────────────────────────── */
 (function () {
-  var GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxvfZWIFzXPfzqTIKDBMjY080w6xCTgcxsQHnTk8CC5XBu7Jl8blW3sMmQ5PWrNU834vg/exec';
   var TIMEOUT_MS = 60000;   // το Apps Script στέλνει δύο email (γραφείο + αντίγραφο)· στην πρώτη κλήση μπορεί να θέλει 15–30″
 
   var MSG = {
@@ -67,7 +67,7 @@
           if (!(json && json.result === 'success')) throw new Error((json && json.error) || 'unexpected response');
           setStatus(status, T('success'), 'success');
           form.reset();
-          if (window.ccEvent) ccEvent('__LEAD_EVENT__', { form_id: 'clientContactForm' });
+          if (window.ccEvent) ccEvent('generate_lead', { form_id: 'clientContactForm' });
           done();
         })
         .catch(function (err) {
