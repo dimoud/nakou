@@ -130,9 +130,13 @@ window.SITE_CONFIG = {
     url: 'https://www.e-efka.gov.gr/el/yperesies-e-ephka',
   },
 
-  /* Κριτικές Google (αυτούσιες στα ελληνικά· στην αγγλική σελίδα σε μετάφραση, με σημείωση) */
+  /* Κριτικές Google (αποσπάσματα από το Προφίλ της· ανανέωση 07/10/2026 — 39 από τις 43, όσες φαίνονται χωρίς σύνδεση.
+     Στην αγγλική σελίδα σε μετάφραση, με σημείωση) */
   reviews: [
-    { name: 'Olga Olgagr', el: 'Η κ. Νάκου είναι πρωτίστως ΑΝΘΡΩΠΟΣ και στη συνέχεια εξαίρετη επαγγελματίας!', en: 'Ms Nakou is first and foremost a decent HUMAN BEING, and then an excellent professional!' },
+    { name: 'Stathis Nikolaidis', el: 'Εξαιρετική επαγγελματίας! Συνεργάστηκα με την κα. Νάκου για την αγορά ενός χώρου αποθήκης-στάθμευσης και έμεινα απόλυτα ευχαριστημένος.', en: 'An excellent professional! I worked with Ms Nakou on buying a storage and parking space and was completely satisfied.' },
+    { name: 'George Danapassis', el: 'Πολύ καλή επαγγελματίας. Μπορεί να διαχειρίζεται και να διεκπεραιώνει τις υποθέσεις με σεβασμό, γνώσεις και επιμονή! Τη συστήνω ανεπιφύλακτα από πολύ πρόσφατη εμπειρία μου!', en: 'A very good professional. She handles and sees cases through with respect, knowledge and persistence! I recommend her without reservation from my very recent experience!' },
+    { name: 'Κυριάκος Κοράκης', el: 'Η κ. Νάκου είναι αξιόλογη και υπεύθυνη επαγγελματίας στους τομείς ενδιαφέροντός της.', en: 'Ms Nakou is a capable and responsible professional in her fields of practice.' },
+    { name: 'Olga Olgagr', el: 'Η κ. Νάκου είναι πρωτίστως ΑΝΘΡΩΠΟΣ και στη συνέχεια εξαίρετη επαγγελματίας! Την επισκέφθηκα προκειμένου να ενημερωθώ για συνταξιοδοτικά θέματα και από την πρώτη στιγμή μου ενέπνευσε εμπιστοσύνη!', en: 'Ms Nakou is first and foremost a decent HUMAN BEING, and then an excellent professional! I visited her to ask about my pension and she inspired trust from the very first moment!' },
     { name: 'Sotiris Tseronis', el: 'Σου θυμίζει ότι πίσω από το επάγγελμα υπάρχουν άνθρωποι. Από την πρώτη συνάντηση ένιωσα πως άκουγε.', en: 'She reminds you there are people behind the profession. From our first meeting I felt she was listening.' },
     { name: 'Psyrri Anthi', el: 'Εξαιρετική και σαν δικηγόρος και σαν άνθρωπος. Σε κάνει να νιώθεις ασφάλεια με τις γνώσεις και τον επαγγελματισμό της.', en: 'Excellent both as a lawyer and as a person. Her knowledge and professionalism make you feel safe.' },
     { name: 'Dimitra P.', el: 'Σπάνια συναντάς επαγγελματίες που συνδυάζουν γνώση, συνέπεια και ανθρωπιά. Η κ. Νάκου είναι μία από αυτούς!', en: 'You rarely meet professionals who combine knowledge, reliability and humanity. Ms Nakou is one of them!' },
